@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gomez Remodeling | Kitchens, Bathrooms & Full Remodels</title>
+<meta name="description" content="Full remodeling services in Dover, New Philadelphia, and Canton, OH.">
+<!-- ============================================================
+  Gomez Remodeling (Gomez Remodeling LLC, formerly branded Gomez FlipOrFlop) - Landing Page
+  Como usar en WordPress / Elementor:
+  1) Sube estas 9 imagenes a tu Biblioteca de medios de WordPress:
+     logo.png, kitchen-bw-finished.jpg, deck-dog-finished.jpg,
+     patio-cover-finished.jpg, hallway-lights-finished.jpg,
+     hallway-clean-finished.jpg, kitchen-wood-finished.jpg,
+     ceiling-commercial-finished.jpg, deck-stairs-finished.jpg,
+     shower-insert-finished.jpg
+  2) Por cada img, copia la URL que WordPress te da para ese archivo y
+     reemplaza el valor de src (cada img tiene un comentario arriba
+     indicando que archivo va ahi). En la galeria, cada foto tiene un
+     <a href="#" class="lightbox-link"> - reemplaza tambien ese href.
+  3) Este cliente SI tiene formulario real de GoHighLevel (ya integrado
+     en Hero y CTA final). No es necesario cambiar nada del formulario,
+     solo el diseño alrededor si hace falta.
+  4) Pega TODO este bloque (incluyendo el style y el script del final) en
+     un widget HTML de Elementor, en una pagina en blanco (sin header/footer
+     del tema si quieres la landing limpia).
+============================================================= -->
+<style>
+  #apg-landing {
+    --red: #c31f27;
+    --red-dark: #971720;
+    --red-light: #e2444c;
+    --ink: #1c1a19;
+    --ink-2: #262322;
+    --ink-3: #322e2c;
+    --line-d: #423d3a;
+    --white: #ffffff;
+    --cream: #faf8f5;
+    --cream-2: #f0ece5;
+    --text-dim: #6b655f;
+    --line-l: #e6e0d6;
+    --heading: var(--ink);
+    --body: var(--text-dim);
+    --surface: var(--white);
+    --line: var(--line-l);
+    background: var(--cream);
+    color: var(--body);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+  }
+  #apg-landing * { box-sizing: border-box; }
+  #apg-landing img { max-width: 100%; display: block; }
+  #apg-landing a { text-decoration: none; }
+  #apg-landing .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  #apg-landing section { padding: 88px 0; margin: 0; }
+  #apg-landing h1, #apg-landing h2, #apg-landing h3 {
+    font-family: 'Oswald', 'Arial Narrow', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--heading);
+    line-height: 1.12;
+    letter-spacing: .3px;
+    margin: 0 0 18px;
+    text-wrap: balance;
+  }
+  #apg-landing h1 { font-size: clamp(34px, 5vw, 56px); }
+  #apg-landing h2 { font-size: clamp(26px, 3.6vw, 38px); }
+  #apg-landing h3 { font-size: 19px; text-transform: none; }
+  #apg-landing p { color: var(--body); margin: 0 0 16px; font-size: 16px; }
+  #apg-landing .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px; color: var(--red);
+    text-transform: uppercase; letter-spacing: 2px; font-size: 13px; font-weight: 700;
+    margin-bottom: 14px;
+  }
+  #apg-landing .eyebrow::before { content:""; width:22px; height:3px; background:var(--red); display:inline-block; }
+  #apg-landing .btn {
+    display: inline-block; background: var(--red); color: #fff; font-weight: 700;
+    padding: 15px 32px; border-radius: 3px; letter-spacing: .4px; text-transform: uppercase; font-size: 14px;
+    transition: background .2s ease, transform .2s ease; border: none; cursor: pointer;
+  }
+  #apg-landing .btn:hover { background: var(--red-dark); transform: translateY(-2px); }
+  #apg-landing .btn-outline {
+    display: inline-block; border: 2px solid var(--ink); color: var(--ink);
+    font-weight: 700; padding: 12px 26px; border-radius: 3px; text-transform: uppercase; font-size: 13px; letter-spacing: .4px;
+  }
+
+  /* section theme helpers */
+  #apg-landing .sec-dark { background: var(--ink); --heading:#fff; --body:#b9b4ae; --surface: var(--ink-2); --line: var(--line-d); }
+  #apg-landing .sec-white { background: var(--white); --heading: var(--ink); --body: var(--text-dim); --surface: var(--cream); --line: var(--line-l); }
+
+  /* TOPBAR */
+  #apg-landing #apg-topbar { padding: 14px 0; margin: 0; background: var(--ink); text-align: center; border-bottom: 1px solid var(--line-d); }
+  #apg-topbar img { height: 56px; width: auto; display: inline-block; }
+
+  /* HERO: panel dividido - carrusel de fotos a la izquierda, texto+formulario en panel oscuro a la derecha */
+  #apg-landing #apg-hero { padding: 0; margin: 0; }
+  #apg-hero .grid { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; }
+  #apg-hero .photo { position: relative; min-height: 520px; overflow: hidden; }
+  #apg-hero .photo .slide {
+    position: absolute; inset: 0; background-size: cover; background-position: center;
+    opacity: 0; animation: apgFade 20s infinite;
+  }
+  #apg-hero .photo .slide:nth-child(1) { animation-delay: 0s; }
+  #apg-hero .photo .slide:nth-child(2) { animation-delay: 5s; }
+  #apg-hero .photo .slide:nth-child(3) { animation-delay: 10s; }
+  #apg-hero .photo .slide:nth-child(4) { animation-delay: 15s; }
+  @keyframes apgFade {
+    0%   { opacity: 0; transform: scale(1.0); }
+    5%   { opacity: 1; }
+    23%  { opacity: 1; transform: scale(1.06); }
+    28%  { opacity: 0; transform: scale(1.06); }
+    100% { opacity: 0; }
+  }
+  #apg-hero .panel { background: var(--ink); padding: 60px 56px; display: flex; flex-direction: column; justify-content: center; }
+  #apg-hero .badge {
+    display: inline-flex; align-items: center; gap: 8px; background: var(--red);
+    color: #fff; border-radius: 3px; padding: 6px 14px; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .6px; margin-bottom: 20px; align-self: flex-start;
+  }
+  #apg-hero h1 { color: #fff; }
+  #apg-hero p.lead { color: #cbc6bf; font-size: 17px; max-width: 480px; }
+  #apg-hero-form { background: var(--ink-2); border: 1px solid var(--line-d); border-top: 3px solid var(--red); border-radius: 4px; padding: 26px; margin-top: 26px; }
+  #apg-hero-form h3 { color: #fff; margin-bottom: 4px; text-transform: uppercase; font-family:'Oswald',sans-serif; font-size: 17px; }
+  #apg-hero-form .sub { font-size: 13px; color: #9c968f; margin-bottom: 16px; }
+  #apg-hero-form .form-slot { min-height: 380px; }
+
+  /* SUBHEADER: frase potente en rojo, entre el Hero y la barra de confianza */
+  #apg-landing #apg-subhead { padding: 10px 0; margin: 0; text-align: center; background: var(--red); }
+  #apg-subhead p {
+    margin: 0; color: #fff; font-family: 'Oswald', sans-serif; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px; font-size: clamp(14px, 1.8vw, 18px);
+  }
+
+  /* TRUST BAR */
+  #apg-landing #apg-trust { padding: 46px 0; margin: 0; border-top: 1px solid var(--line-l); border-bottom: 1px solid var(--line-l); }
+  #apg-trust .grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; }
+  #apg-trust .item { text-align: center; padding: 0 12px; }
+  #apg-trust .icon {
+    width: 50px; height: 50px; margin: 0 auto 14px; background: var(--red);
+    display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 16px; border-radius: 3px;
+  }
+  #apg-trust h3 { font-size: 17px; margin-bottom: 6px; text-transform: uppercase; font-family:'Oswald',sans-serif; }
+  #apg-trust p { font-size: 14px; margin: 0; }
+
+  /* PROBLEM: banda solida oscura, sin foto */
+  #apg-problem { text-align: center; }
+  #apg-problem .wrap { max-width: 820px; }
+  #apg-problem h2 { color: #fff; }
+
+  /* SOLUTION: imagen contenida + texto */
+  #apg-solution .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  #apg-solution img { border-radius: 6px; }
+  #apg-solution .stat-row { display: flex; gap: 30px; margin-top: 28px; flex-wrap: wrap; }
+  #apg-solution .stat b { display: block; font-family:'Oswald',sans-serif; font-size: 28px; color: var(--red); }
+  #apg-solution .stat span { font-size: 12px; color: var(--text-dim); text-transform: uppercase; letter-spacing: .4px; }
+
+  /* SERVICES */
+  #apg-services .head { text-align: center; max-width: 640px; margin: 0 auto 50px; }
+  #apg-services .grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 22px; }
+  #apg-services .card {
+    background: var(--ink-2); border: 1px solid var(--line-d); border-top: 3px solid var(--red);
+    border-radius: 4px; padding: 30px 24px; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  #apg-services .card:hover { transform: translateY(-6px); border-color: var(--red); box-shadow: 0 16px 32px rgba(0,0,0,.4); }
+  #apg-services .card.apg-card-pre { opacity: 0; transform: translateY(24px); }
+  #apg-services .card.apg-card-in { animation: apgCardIn .6s ease forwards; }
+  #apg-services .card:nth-child(1).apg-card-in { animation-delay: 0s; }
+  #apg-services .card:nth-child(2).apg-card-in { animation-delay: .1s; }
+  #apg-services .card:nth-child(3).apg-card-in { animation-delay: .2s; }
+  #apg-services .card:nth-child(4).apg-card-in { animation-delay: .3s; }
+  @keyframes apgCardIn { to { opacity: 1; transform: translateY(0); } }
+  #apg-services h3 { color: #fff; font-size: 17px; text-transform: uppercase; font-family:'Oswald',sans-serif; }
+  #apg-services p { font-size: 14px; margin: 0; }
+
+  /* PROCESS */
+  #apg-process .head { text-align: center; max-width: 640px; margin: 0 auto 54px; }
+  #apg-process .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 26px; }
+  #apg-process .step-n { font-family:'Oswald',sans-serif; font-size: 42px; font-weight:700; color: var(--red); margin-bottom: 8px; }
+  #apg-process h3 { font-size: 16px; text-transform: uppercase; font-family:'Oswald',sans-serif; }
+  #apg-process p { font-size: 14px; }
+
+  /* ABOUT */
+  #apg-about .wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: center; }
+  #apg-about img { border-radius: 6px; }
+  #apg-about .diffs { display: grid; gap: 18px; margin-top: 24px; }
+  #apg-about .diff { display: flex; gap: 14px; align-items: flex-start; }
+  #apg-about .diff .dot { width: 9px; height: 9px; background: var(--red); margin-top: 8px; flex: none; }
+  #apg-about .diff h3 { font-size: 15px; margin-bottom: 3px; }
+  #apg-about .diff p { font-size: 14px; margin: 0; }
+
+  /* GALLERY */
+  #apg-gallery .head { text-align: center; max-width: 640px; margin: 0 auto 50px; }
+  #apg-gallery .grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 190px; gap: 3px; }
+  #apg-gallery .grid a:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+  #apg-gallery .grid a { position: relative; overflow: hidden; display: block; cursor: zoom-in; }
+  #apg-gallery .grid img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+  #apg-gallery .grid a:hover img { transform: scale(1.08); }
+  #apg-gallery .grid a::after { content:""; position:absolute; inset:0; background: linear-gradient(to top, rgba(0,0,0,.28), transparent 40%); }
+
+  /* LIGHTBOX */
+  #apg-lightbox { position: fixed; inset: 0; background: rgba(10,9,8,.94); z-index: 99999; display:none; align-items:center; justify-content:center; padding:48px; cursor:zoom-out; }
+  #apg-lightbox.open { display: flex; }
+  #apg-lightbox img { max-width: 92vw; max-height: 88vh; border-radius: 4px; box-shadow: 0 30px 90px rgba(0,0,0,.6); cursor: default; }
+  #apg-lightbox .apg-lightbox-close { position: absolute; top: 22px; right: 30px; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.25); color: #fff; font-size: 24px; line-height: 1; cursor: pointer; }
+
+  /* COMMITMENT / TRUST BAND (reemplaza testimonios ficticios) */
+  #apg-commit { text-align: center; }
+  #apg-commit .wrap { max-width: 780px; }
+  #apg-commit .mark { font-family:'Oswald',sans-serif; font-size: 70px; color: var(--red); line-height: 1; margin-bottom: 4px; }
+  #apg-commit blockquote { margin: 0 0 26px; font-size: clamp(20px, 2.6vw, 27px); font-style: italic; color: #fff; font-weight: 500; line-height: 1.45; }
+  #apg-commit .who { font-family:'Oswald',sans-serif; text-transform: uppercase; letter-spacing: .5px; color: var(--red); font-size: 15px; }
+  #apg-commit .who span { display: block; color: #9c968f; text-transform: none; font-family:'Inter',sans-serif; font-size: 13px; margin-top: 2px; letter-spacing: 0; }
+  #apg-commit .note { margin-top: 30px; font-size: 14px; color: #9c968f; }
+
+  /* FAQ */
+  #apg-faq .wrap { max-width: 820px; }
+  #apg-faq .head { text-align: center; margin-bottom: 44px; }
+  #apg-faq details { border-bottom: 1px solid var(--line-l); padding: 22px 0; }
+  #apg-faq summary { cursor: pointer; list-style: none; font-family:'Oswald',sans-serif; font-size: 18px; text-transform: uppercase; color: var(--ink); display: flex; justify-content: space-between; align-items: center; }
+  #apg-faq summary::-webkit-details-marker { display: none; }
+  #apg-faq summary::after { content: "+"; color: var(--red); font-size: 22px; margin-left: 20px; font-family: Arial, sans-serif; }
+  #apg-faq details[open] summary::after { content: "\2013"; }
+  #apg-faq details p { margin-top: 14px; margin-bottom: 0; font-size: 15px; }
+
+  /* FINAL CTA */
+  #apg-cta .wrap { max-width: 1080px; }
+  #apg-cta .cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  #apg-cta .cta-info { text-align: left; }
+  #apg-cta img.logo { width: 150px; margin: 0 0 22px; }
+  #apg-cta h1 { color: #fff; }
+  #apg-cta-form { background: var(--ink-2); border: 1px solid var(--line-d); border-top: 3px solid var(--red); border-radius: 4px; padding: 26px; }
+  #apg-cta-form .form-slot { min-height: 380px; }
+
+  /* FOOTER */
+  #apg-landing #apg-footer { padding: 36px 0; margin: 0; text-align: center; }
+  #apg-footer p { font-size: 13px; color: #857f78; margin: 4px 0; }
+  #apg-footer a { color: var(--red-light); }
+
+  @media (max-width: 900px) {
+    #apg-hero .grid { grid-template-columns: 1fr; }
+    #apg-hero .photo { min-height: 260px; }
+    #apg-hero .panel { padding: 46px 28px; }
+    #apg-trust .grid, #apg-services .grid, #apg-process .steps { grid-template-columns: 1fr 1fr; }
+    #apg-solution .wrap, #apg-about .wrap { grid-template-columns: 1fr; }
+    #apg-about img { order: -1; }
+    #apg-solution .stat-row { flex-wrap: nowrap; gap: 12px; }
+    #apg-solution .stat { flex: 1; min-width: 0; }
+    #apg-solution .stat b { font-size: 22px; }
+    #apg-solution .stat span { font-size: 11px; }
+    #apg-process .steps .step { text-align: center; }
+    #apg-process .step-n { margin-left: auto; margin-right: auto; }
+    #apg-cta .cta-grid { grid-template-columns: 1fr; }
+    #apg-cta .cta-info { text-align: center; }
+    #apg-cta img.logo { margin: 0 auto 22px; }
+    #apg-cta-form h3 { text-align: center; }
+    #apg-gallery .grid { grid-template-columns: repeat(2,1fr); grid-auto-rows: 170px; }
+    #apg-gallery .grid a:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+  }
+  @media (max-width: 620px) {
+    #apg-landing section { padding: 56px 0; }
+    #apg-landing #apg-topbar { padding: 10px 0; }
+    #apg-topbar img { height: 40px; }
+    #apg-trust .grid, #apg-services .grid, #apg-process .steps, #apg-gallery .grid { grid-template-columns: 1fr; }
+    #apg-gallery .grid a:nth-child(1) { grid-column: span 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #apg-hero .photo .slide { animation: none; opacity: 0; }
+    #apg-hero .photo .slide:first-child { opacity: 1; }
+    #apg-services .card.apg-card-pre { opacity: 1; transform: none; }
+    #apg-services .card.apg-card-in { animation: none; }
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<div id="apg-landing">
+
+  <!-- TOPBAR: logo original de la marca -->
+  <header id="apg-topbar">
+    <!-- Imagen: logo.png -->
+    <img src="images/logo.png" alt="Gomez Remodeling logo">
+  </header>
+
+  <!-- SUBHEADER: franja roja con frase potente en blanco, arriba del Hero -->
+  <section id="apg-subhead">
+    <div class="wrap">
+      <p>No shortcuts. No surprises. Just honest remodeling work.</p>
+    </div>
+  </section>
+
+  <!-- 1. HERO -->
+  <section id="apg-hero">
+    <div class="grid">
+      <!-- Imagen de respaldo (se ve siempre debajo del carrusel, evita que quede vacio en la transicion): kitchen-bw-finished.jpg -->
+      <div class="photo" style="background-image:url('images/kitchen-bw-finished.jpg'); background-size:cover; background-position:center;">
+        <!-- Carrusel del Hero (solo en este sitio): kitchen-bw-finished.jpg, hallway-clean-finished.jpg, patio-cover-finished.jpg, hallway-lights-finished.jpg -->
+        <div class="slide" style="background-image:url('images/kitchen-bw-finished.jpg');"></div>
+        <div class="slide" style="background-image:url('images/hallway-clean-finished.jpg');"></div>
+        <div class="slide" style="background-image:url('images/patio-cover-finished.jpg');"></div>
+        <div class="slide" style="background-image:url('images/hallway-lights-finished.jpg');"></div>
+      </div>
+      <div class="panel">
+        <span class="badge">Dover &middot; New Philadelphia &middot; Canton, OH</span>
+        <h1>Kitchens, Bathrooms &amp; Full Remodels &mdash; Done Right, On Your Budget</h1>
+        <p class="lead">Serving homeowners, investors, and real estate professionals across Dover, New Philadelphia, Bolivar, and Canton. Honest communication, quality work, and pricing that respects your budget.</p>
+        <div id="apg-hero-form">
+          <h3>Request Your Free Estimate</h3>
+          <div class="sub">Tell us about your project and we'll follow up fast.</div>
+          <div class="form-slot">
+<iframe
+    src="https://api.leadconnectorhq.com/widget/form/pNmFVNiKnyOWz1wb536D"
+    style="width:100%;height:100%;border:none;border-radius:8px"
+    id="inline-pNmFVNiKnyOWz1wb536D"
+    data-layout="{'id':'INLINE'}"
+    data-trigger-type="alwaysShow"
+    data-trigger-value=""
+    data-activation-type="alwaysActivated"
+    data-activation-value=""
+    data-deactivation-type="neverDeactivate"
+    data-deactivation-value=""
+    data-form-name="Contact form"
+    data-height="621"
+    data-layout-iframe-id="inline-pNmFVNiKnyOWz1wb536D"
+    data-form-id="pNmFVNiKnyOWz1wb536D"
+    data-cookie-consent="true"
+    data-cookie-consent-provider="auto"
+    title="Contact form"
+        >
+</iframe>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. TRUST BAR -->
+  <section id="apg-trust" class="sec-white">
+    <div class="wrap grid">
+      <div class="item">
+        <div class="icon">8-10</div>
+        <h3>Years of Experience</h3>
+        <p>Remodeling homes and preparing properties across Ohio.</p>
+      </div>
+      <div class="item">
+        <div class="icon">&#10003;</div>
+        <h3>Workmanship Warranty</h3>
+        <p>Every job is backed by our guarantee.</p>
+      </div>
+      <div class="item">
+        <div class="icon">&#9825;</div>
+        <h3>Personalized Communication</h3>
+        <p>We listen first, then build a plan around your project.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. PROBLEM -->
+  <section id="apg-problem" class="sec-dark">
+    <div class="wrap">
+      <h2>Tired of living with a kitchen, bathroom, or space that just doesn't work anymore?</h2>
+      <p>Outdated cabinets, cramped bathrooms, worn flooring &mdash; an aging space doesn't just look tired, it holds back your comfort and your property's value. And finding a contractor who actually listens and follows through shouldn't be this hard.</p>
+    </div>
+  </section>
+
+  <!-- 4. SOLUTION -->
+  <section id="apg-solution" class="sec-white">
+    <div class="wrap">
+      <!-- Imagen: hallway-clean-finished.jpg -->
+      <img src="images/hallway-clean-finished.jpg" alt="Finished interior remodel by Gomez Remodeling">
+      <div>
+        <span class="eyebrow">Our Solution</span>
+        <h2>Full Remodeling Services, From Concept to Final Walkthrough</h2>
+        <p><strong>Gomez Remodeling</strong> handles kitchens, bathrooms, flooring, painting, drywall, carpentry, and general repairs &mdash; all under one roof. Whether you're renovating your home or preparing a property to sell or rent, we deliver quality work that respects your budget and your timeline.</p>
+        <a href="#apg-hero-form" class="btn">Request Your Free Estimate</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SERVICES -->
+  <section id="apg-services" class="sec-dark">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" style="justify-content:center;">What We Do</span>
+        <h2>Remodeling Services Built Around Your Project</h2>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>Kitchen Remodeling</h3>
+          <p>Cabinets, countertops, and layouts redesigned for how you actually live.</p>
+        </div>
+        <div class="card">
+          <h3>Bathroom Renovation</h3>
+          <p>Modern, functional bathrooms built to last.</p>
+        </div>
+        <div class="card">
+          <h3>Flooring &amp; Painting</h3>
+          <p>Fresh floors and finishes that transform any room.</p>
+        </div>
+        <div class="card">
+          <h3>General Repairs &amp; Carpentry</h3>
+          <p>From drywall to trim, the details that make a space feel finished.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PROCESS -->
+  <section id="apg-process" class="sec-white">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" style="justify-content:center;">How We Work</span>
+        <h2>From Estimate to Finished Project in 4 Steps</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-n">01</div>
+          <h3>Free In-Home Estimate</h3>
+          <p>We walk through your space and give you an honest, detailed quote.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">02</div>
+          <h3>Clear Plan &amp; Budget</h3>
+          <p>You'll know the scope, timeline, and cost before we start &mdash; no surprises.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">03</div>
+          <h3>Quality Craftsmanship</h3>
+          <p>Our team handles every detail, from framing to final finish.</p>
+        </div>
+        <div class="step">
+          <div class="step-n">04</div>
+          <h3>Final Walkthrough</h3>
+          <p>We review the finished work together, backed by our workmanship warranty.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. ABOUT -->
+  <section id="apg-about" class="sec-white">
+    <div class="wrap">
+      <!-- Imagen: patio-cover-finished.jpg -->
+      <img src="images/patio-cover-finished.jpg" alt="Finished patio cover by Gomez Remodeling">
+      <div>
+        <span class="eyebrow">About Us</span>
+        <h2>Gomez Remodeling: Quality You Can Count On</h2>
+        <p>Led by Apolonio Gómez, we've spent 8-10 years remodeling homes and preparing properties across Dover, New Philadelphia, Bolivar, and Canton. We work directly with every client &mdash; homeowners, investors, and real estate professionals &mdash; to deliver honest communication and craftsmanship that lasts.</p>
+        <div class="diffs">
+          <div class="diff"><span class="dot"></span><div><h3>Personalized Attention</h3><p>We listen first, then build a plan around your project and budget.</p></div></div>
+          <div class="diff"><span class="dot"></span><div><h3>Workmanship Warranty</h3><p>Every job is backed by our guarantee.</p></div></div>
+          <div class="diff"><span class="dot"></span><div><h3>Investor &amp; Homeowner Ready</h3><p>From single rooms to full property flips, we handle it all.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. GALLERY -->
+  <section id="apg-gallery" class="sec-white">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" style="justify-content:center;">Our Work</span>
+        <h2>Recent Remodels Across Dover &amp; Canton</h2>
+      </div>
+    </div>
+    <div class="grid">
+      <!-- Imagen: kitchen-bw-finished.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/kitchen-bw-finished.jpg" alt="Finished modern kitchen remodel"></a>
+      <!-- Imagen: kitchen-wood-finished.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/kitchen-wood-finished.jpg" alt="Finished kitchen with wood cabinets"></a>
+      <!-- Imagen: hallway-lights-finished.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/hallway-lights-finished.jpg" alt="Finished hallway remodel"></a>
+      <!-- Imagen: deck-dog-finished.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/deck-dog-finished.jpg" alt="Finished deck remodel"></a>
+      <!-- Imagen: deck-stairs-finished.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/deck-stairs-finished.jpg" alt="Finished deck stairs"></a>
+      <!-- Imagen: ceiling-commercial-finished.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/ceiling-commercial-finished.jpg" alt="Finished commercial ceiling remodel"></a>
+      <!-- Imagen: shower-insert-finished.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/shower-insert-finished.jpg" alt="Finished bathroom shower remodel"></a>
+      <!-- Imagen: hallway-clean-finished.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/hallway-clean-finished.jpg" alt="Finished interior remodel"></a>
+    </div>
+  </section>
+
+  <!-- 9. COMMITMENT / TRUST BAND (en vez de testimonios inventados, ya que el cliente indico que no tiene) -->
+  <section id="apg-commit" class="sec-dark">
+    <div class="wrap">
+      <div class="mark">&ldquo;</div>
+      <blockquote>I work directly with every client on every project &mdash; no subcontractors juggling three jobs at once. When you hire us, you get my full attention, clear communication from day one, and my word that the job gets done right.</blockquote>
+      <div class="who">Apolonio G&oacute;mez <span>Owner, Gomez Remodeling</span></div>
+    </div>
+  </section>
+
+  <!-- 10. FAQ -->
+  <section id="apg-faq" class="sec-white">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" style="justify-content:center;">FAQ</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <details open>
+        <summary>How much will my project cost?</summary>
+        <p>Every project is different, so we provide a free, detailed estimate after seeing your space &mdash; that's the only way to give you an honest, accurate price.</p>
+      </details>
+      <details>
+        <summary>How long will the work take?</summary>
+        <p>Timelines depend on the scope of the project. We'll walk you through a realistic schedule during your free estimate.</p>
+      </details>
+      <details>
+        <summary>Do you have experience, references, or photos of past work?</summary>
+        <p>Yes &mdash; with 8-10 years of remodeling experience, we're happy to share references and photos of completed projects. Just ask when you request your estimate.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- 11. FINAL CTA -->
+  <section id="apg-cta" class="sec-dark">
+    <div class="wrap cta-grid">
+      <div class="cta-info">
+        <!-- Imagen: logo.png -->
+        <img class="logo" src="images/logo.png" alt="Gomez Remodeling logo">
+        <h1>Ready to Transform Your Space?</h1>
+        <p>Whether it's one room or a full property flip, let's talk about your project &mdash; no pressure, just an honest plan.</p>
+      </div>
+      <div id="apg-cta-form">
+        <h3 style="color:#fff;text-transform:uppercase;font-family:'Oswald',sans-serif;">Get Your Free Estimate</h3>
+        <div class="form-slot">
+<iframe
+    src="https://api.leadconnectorhq.com/widget/form/pNmFVNiKnyOWz1wb536D"
+    style="width:100%;height:100%;border:none;border-radius:8px"
+    id="inline-pNmFVNiKnyOWz1wb536D-2"
+    data-layout="{'id':'INLINE'}"
+    data-trigger-type="alwaysShow"
+    data-trigger-value=""
+    data-activation-type="alwaysActivated"
+    data-activation-value=""
+    data-deactivation-type="neverDeactivate"
+    data-deactivation-value=""
+    data-form-name="Contact form"
+    data-height="621"
+    data-layout-iframe-id="inline-pNmFVNiKnyOWz1wb536D-2"
+    data-form-id="pNmFVNiKnyOWz1wb536D"
+    data-cookie-consent="true"
+    data-cookie-consent-provider="auto"
+    title="Contact form"
+        >
+</iframe>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. FOOTER -->
+  <section id="apg-footer" class="sec-dark">
+    <div class="wrap">
+      <p>&copy; 2026 Gomez Remodeling LLC. All rights reserved.</p>
+      <p>Serving Dover, New Philadelphia, Bolivar, and Canton, Ohio.</p>
+      <p><a href="tel:+13309343490">(330) 934-3490</a> &nbsp;&middot;&nbsp; <a href="mailto:gomezflip12@gmail.com">gomezflip12@gmail.com</a></p>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div id="apg-lightbox">
+    <button type="button" class="apg-lightbox-close" aria-label="Close">&times;</button>
+    <img src="" alt="">
+  </div>
+
+</div>
+<script>
+(function () {
+  var lb = document.getElementById('apg-lightbox');
+  if (!lb) return;
+  var lbImg = lb.querySelector('img');
+  var closeBtn = lb.querySelector('.apg-lightbox-close');
+
+  document.querySelectorAll('#apg-gallery a.lightbox-link').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var inner = a.querySelector('img');
+      lbImg.src = inner ? inner.src : '';
+      lbImg.alt = inner ? inner.alt : '';
+      lb.classList.add('open');
+    });
+  });
+
+  function closeLightbox() {
+    lb.classList.remove('open');
+    lbImg.src = '';
+  }
+  closeBtn.addEventListener('click', closeLightbox);
+  lb.addEventListener('click', function (e) {
+    if (e.target === lb) closeLightbox();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+})();
+(function () {
+  var cards = document.querySelectorAll('#apg-services .card');
+  if (!('IntersectionObserver' in window) || !cards.length) return;
+  cards.forEach(function (c) { c.classList.add('apg-card-pre'); });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('apg-card-in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: .15 });
+  cards.forEach(function (c) { io.observe(c); });
+})();
+</script>
+</body>
+</html>
