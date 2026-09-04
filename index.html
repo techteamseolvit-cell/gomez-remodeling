@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gomez Remodeling | Kitchens, Bathrooms & Full Remodels</title>
 <meta name="description" content="Full remodeling services in Dover, New Philadelphia, and Canton, OH.">
-<style>html,body{margin:0;padding:0;}</style>
+<style>html,body{margin:0;padding:0;overflow-x:hidden;}</style>
 <!-- ============================================================
   Gomez Remodeling (Gomez Remodeling LLC, formerly branded Gomez FlipOrFlop) - Landing Page
   Como usar en WordPress / Elementor:
@@ -96,6 +96,7 @@
   /* HERO: panel dividido - carrusel de fotos a la izquierda, texto+formulario en panel oscuro a la derecha */
   #apg-landing #apg-hero { padding: 0; margin: 0; }
   #apg-hero .grid { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; }
+  #apg-hero .grid > * { min-width: 0; }
   #apg-hero .photo { position: relative; min-height: 520px; overflow: hidden; }
   #apg-hero .photo .slide {
     position: absolute; inset: 0; background-size: cover; background-position: center;
@@ -123,7 +124,7 @@
   #apg-hero-form { background: var(--ink-2); border: 1px solid var(--line-d); border-top: 3px solid var(--red); border-radius: 4px; padding: 26px; margin-top: 26px; }
   #apg-hero-form h3 { color: #fff; margin-bottom: 4px; text-transform: uppercase; font-family:'Oswald',sans-serif; font-size: 17px; }
   #apg-hero-form .sub { font-size: 13px; color: #9c968f; margin-bottom: 16px; }
-  #apg-hero-form .form-slot { min-height: 380px; }
+  #apg-hero-form .form-slot { min-height: 380px; overflow: hidden; }
 
   /* SUBHEADER: frase potente en rojo, entre el Hero y la barra de confianza */
   #apg-landing #apg-subhead { padding: 10px 0; margin: 0; text-align: center; background: var(--red); }
@@ -227,11 +228,12 @@
   /* FINAL CTA */
   #apg-cta .wrap { max-width: 1080px; }
   #apg-cta .cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  #apg-cta .cta-grid > * { min-width: 0; }
   #apg-cta .cta-info { text-align: left; }
   #apg-cta img.logo { width: 150px; margin: 0 0 22px; }
   #apg-cta h1 { color: #fff; }
   #apg-cta-form { background: var(--ink-2); border: 1px solid var(--line-d); border-top: 3px solid var(--red); border-radius: 4px; padding: 26px; }
-  #apg-cta-form .form-slot { min-height: 380px; }
+  #apg-cta-form .form-slot { min-height: 380px; overflow: hidden; }
 
   /* FOOTER */
   #apg-landing #apg-footer { padding: 36px 0; margin: 0; text-align: center; }
