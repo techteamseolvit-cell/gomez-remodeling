@@ -194,8 +194,9 @@
 
   /* GALLERY */
   #apg-gallery .head { text-align: center; max-width: 640px; margin: 0 auto 50px; }
-  #apg-gallery .grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 190px; gap: 3px; }
-  #apg-gallery .grid a:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+  #apg-gallery .grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 190px; gap: 3px; grid-auto-flow: dense; }
+  #apg-gallery .grid a:nth-child(6n+1) { grid-column: span 2; grid-row: span 2; }
+  #apg-gallery .grid a:nth-child(6n+4) { grid-row: span 2; }
   #apg-gallery .grid a { position: relative; overflow: hidden; display: block; cursor: zoom-in; }
   #apg-gallery .grid img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
   #apg-gallery .grid a:hover img { transform: scale(1.08); }
@@ -261,14 +262,15 @@
     #apg-cta img.logo { margin: 0 auto 22px; }
     #apg-cta-form h3 { text-align: center; }
     #apg-gallery .grid { grid-template-columns: repeat(2,1fr); grid-auto-rows: 170px; }
-    #apg-gallery .grid a:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+    #apg-gallery .grid a:nth-child(6n+1) { grid-column: span 2; grid-row: span 1; }
+    #apg-gallery .grid a:nth-child(6n+4) { grid-row: span 1; }
   }
   @media (max-width: 620px) {
     #apg-landing section { padding: 56px 0; }
     #apg-landing #apg-topbar { padding: 10px 0; }
     #apg-topbar img { height: 72px; }
     #apg-trust .grid, #apg-services .grid, #apg-process .steps, #apg-gallery .grid { grid-template-columns: 1fr; }
-    #apg-gallery .grid a:nth-child(1) { grid-column: span 1; }
+    #apg-gallery .grid a:nth-child(6n+1), #apg-gallery .grid a:nth-child(6n+4) { grid-column: span 1; grid-row: span 1; }
   }
   @media (prefers-reduced-motion: reduce) {
     #apg-hero .photo .slide { animation: none; opacity: 0; }
@@ -509,6 +511,26 @@
       <a href="#" class="lightbox-link"><img src="images/hallway-styled-finished.jpg" alt="Finished hallway remodel"></a>
       <!-- Imagen: kitchen-farmhouse-finished.jpg -->
       <a href="#" class="lightbox-link"><img src="images/kitchen-farmhouse-finished.jpg" alt="Finished farmhouse-style kitchen remodel"></a>
+      <!-- Imagen: hallway-carpet-finished.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/hallway-carpet-finished.jpg" alt="Finished hallway with new carpet"></a>
+      <!-- Imagen: living-room-floor-finished.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/living-room-floor-finished.jpg" alt="Finished living room with refinished hardwood floors"></a>
+      <!-- Imagen: bathroom-grabbar-finished.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/bathroom-grabbar-finished.jpg" alt="Finished bathroom remodel with safety grab bar"></a>
+      <!-- Imagen: entry-hardwood-finished.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/entry-hardwood-finished.jpg" alt="Finished entry hallway with hardwood floors"></a>
+      <!-- Imagen: bathroom-vanity-finished.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/bathroom-vanity-finished.jpg" alt="Finished bathroom remodel with new vanity"></a>
+      <!-- Imagen: bathroom-toilet-finished.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/bathroom-toilet-finished.jpg" alt="Finished bathroom remodel"></a>
+      <!-- Imagen: kitchen-white-finished.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/kitchen-white-finished.jpg" alt="Finished white kitchen remodel with granite counters"></a>
+      <!-- Imagen: bedroom-carpet-finished.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/bedroom-carpet-finished.jpg" alt="Finished bedroom with new carpet"></a>
+      <!-- Imagen: kitchen-hallway-finished.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/kitchen-hallway-finished.jpg" alt="Finished kitchen remodel viewed from hallway"></a>
+      <!-- Imagen: bedroom-window-finished.jpg -->
+      <a href="#" class="lightbox-link"><img src="images/bedroom-window-finished.jpg" alt="Finished bedroom remodel with new carpet and windows"></a>
     </div>
   </section>
 
