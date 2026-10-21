@@ -196,7 +196,7 @@ strong { color: var(--txt); font-weight: 800; }
 .stars { color: var(--silver); letter-spacing: 3px; font-size: 13px; margin-bottom: 8px; }
 
 /* ---------- casos de éxito ---------- */
-.case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 2vw, 22px); margin-top: clamp(28px, 4vw, 44px); }
+.case-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(14px, 2vw, 22px); margin-top: clamp(28px, 4vw, 44px); }
 .case { background: var(--card); border: 1px solid var(--bdr); padding: clamp(24px, 3vw, 32px); display: flex; flex-direction: column; gap: 12px; }
 .case .who { display: flex; align-items: center; gap: 14px; }
 .case .av { width: 48px; height: 48px; flex: none; display: grid; place-items: center; font-family: var(--display); font-weight: 900; font-size: 17px; background: linear-gradient(180deg, var(--red-bright), var(--red)); clip-path: polygon(14% 0, 100% 0, 86% 100%, 0 100%); }
@@ -583,39 +583,19 @@ footer { border-top: 1px solid var(--bdr); padding: 44px 0 110px; color: var(--s
     <!-- Casos con nombre (del template Frontera). TODO: pegar textos/resultados reales -->
     <div class="case-grid">
       <article class="case reveal">
-        <div class="who"><span class="av">FC</span><div><b>Fernando Cruz</b><span>Cliente One Empire</span></div></div>
+        <div class="who"><span class="av">FC</span><div><b>Fernando Cruz</b><span>FCS Construction</span></div></div>
         <div class="stars">★★★★★</div>
         <p class="quote">“En dos meses he hecho tantas cosas que creo que ni en dos años se hubieran hecho.”</p>
         <p class="quote-more">Desde platicar la idea de la compañía hasta poner a su hijo a estudiar para la licencia —cuatro semanas de estudio todos los días— y gestionar licencias y aseguranzas, todo en cerca de un mes.</p>
         <div class="ba-row"><div><small>Antes</small>Solo la idea de la compañía</div><div><small>Después</small>Licencia y seguros en marcha en ~1 mes</div></div>
       </article>
       <article class="case reveal d1">
-        <div class="who"><span class="av">S</span><div><b>Samuel</b><span>Cliente One Empire</span></div></div>
-        <p><span class="todo">[TODO: cita de Samuel + su Loom del template Frontera]</span></p>
-        <div class="ba-row"><div><small>Antes</small><span class="todo">[TODO]</span></div><div><small>Después</small><span class="todo">[TODO]</span></div></div>
-      </article>
-      <article class="case reveal d2">
-        <div class="who"><span class="av">HR</span><div><b>Hugo &amp; Roxana Benitez</b><span>Clientes One Empire</span></div></div>
-        <p><span class="todo">[TODO: cita del testimonio del template Frontera]</span></p>
-        <div class="ba-row"><div><small>Antes</small><span class="todo">[TODO]</span></div><div><small>Después</small><span class="todo">[TODO]</span></div></div>
-      </article>
-      <article class="case reveal">
-        <div class="who"><span class="av">JF</span><div><b>Jose Flores</b><span>Cliente One Empire</span></div></div>
-        <p><span class="todo">[TODO: cita del testimonio del template Frontera]</span></p>
-        <div class="ba-row"><div><small>Antes</small><span class="todo">[TODO]</span></div><div><small>Después</small><span class="todo">[TODO]</span></div></div>
-      </article>
-      <article class="case reveal d1">
         <video class="case-video" controls preload="metadata" playsinline src="https://assets.cdn.filesafe.space/4o5wwWKbFhOEOaerWTE6/media/6ad8fb6289ad2537e4a0e174.mp4"></video>
-        <div class="who"><span class="av">?</span><div><b><span class="todo">[TODO: nombre]</span></b><span>Cliente One Empire</span></div></div>
+        <div class="who"><span class="av">AE</span><div><b>Anmilsy Betancourt &amp; Edgar Pérez</b><span>Exquisite Painting DMV</span></div></div>
         <div class="stars">★★★★★</div>
         <p class="quote">“Nuestra meta ahora no es llegar a los $100,000, sino mantener los $100,000 al mes, porque ya llegamos a la meta.”</p>
         <p class="quote-more">El mes pasado cerró con alrededor de $105,000–$107,000.</p>
         <div class="ba-row"><div><small>Meta</small>$100K / mes</div><div><small>Hoy</small>~$105K–$107K / mes</div></div>
-      </article>
-      <article class="case todo-card reveal d2">
-        <span class="todo-tag">Placeholder</span>
-        <div class="who"><span class="av">?</span><div><b>[Nombre del cliente]</b><span>[Empresa · ciudad]</span></div></div>
-        <p><span class="todo">[Caso de éxito – resultado antes/después con cifras reales]</span></p>
       </article>
     </div>
   </div>
