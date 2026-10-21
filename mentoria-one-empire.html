@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>Mentoría One Empire · Hugo Pérez · Para empresarios latinos de la construcción</title>
+<meta name="description" content="Hugo Pérez, fundador de Potros Construction y One Empire, pasó de casi quebrar a superar $1M en facturación en 9 meses. Aplica a la mentoría One Empire para empresarios y contratistas latinos de la construcción."/>
+<meta name="theme-color" content="#08080a"/>
+<link rel="icon" href="https://assets.cdn.filesafe.space/4o5wwWKbFhOEOaerWTE6/media/6abfcbaf150d6ea53db13e67.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500..900&family=Manrope:wght@400..800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet"/>
+<style>
+/* =========================================================
+   One Empire · Mentoría
+   Esquema/estructura: landing validada "Frontera al Éxito"
+   Branding (tipos + colores): yosoyempresarioone.com/next-level-leaders-tampa
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+:root {
+  --bg: #08080a; --card: #111114; --card-hover: #1a1a1f; --txt: #ffffff;
+  --txt2: #c9cbd1; --txt3: #8b8f97; --bdr: rgba(255,255,255,.1); --bdr-dark: rgba(8,8,10,.14);
+  --red: #c1121f; --red-bright: #e01e2b; --red-deep: #7d0b14; --red-dim: rgba(193,18,31,.14);
+  --silver: #c9ccd2; --silver-mid: #a3a7af; --silver-dark: #5f636b;
+  --chrome: linear-gradient(180deg, #ffffff 0%, #f5f6f8 35%, #dcdfe3 65%, #b9bec6 100%);
+  --steel: linear-gradient(160deg, #f1f2f4 0%, #d7dade 55%, #c4c8ce 100%);
+  --red-line: linear-gradient(90deg, transparent, #e01e2b, transparent);
+  --display: "Archivo", "Arial Black", sans-serif;
+  --body: "Manrope", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+  --pad-x: clamp(18px, 4vw, 40px);
+}
+body { background: var(--bg); color: var(--txt); font-family: var(--body); font-size: 17px; line-height: 1.65; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+img, video, iframe { max-width: 100%; display: block; }
+a { color: inherit; }
+.wrap { max-width: 1140px; margin: 0 auto; padding: 0 var(--pad-x); }
+.wrap-sm { max-width: 780px; margin: 0 auto; padding: 0 var(--pad-x); }
+.section { position: relative; padding: clamp(72px, 9vw, 116px) 0; }
+.on-steel { background: var(--steel); color: var(--bg); }
+.carbon { background: var(--card); }
+
+/* ---------- type ---------- */
+h1, h2, h3 { font-family: var(--display); font-weight: 900; text-transform: uppercase; letter-spacing: -.01em; text-wrap: balance; }
+h1 { font-size: clamp(31px, 4.1vw, 52px); line-height: 1.08; }
+h2 { font-size: clamp(26px, 3.3vw, 42px); line-height: 1.12; }
+h3 { font-size: clamp(18px, 1.8vw, 21px); line-height: 1.2; font-weight: 800; }
+p { color: var(--txt2); line-height: 1.7; }
+.on-steel p { color: #33363c; }
+strong { color: var(--txt); font-weight: 800; }
+.on-steel strong { color: var(--bg); }
+.chrome { background: var(--chrome); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.red { color: var(--red-bright); }
+.on-steel .red { color: var(--red); }
+.eyebrow { font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--red-bright); display: inline-flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.eyebrow::before { content: ""; width: 34px; height: 2px; background: currentColor; transform: skewX(-30deg); }
+.on-steel .eyebrow { color: var(--red); }
+.eyebrow-c { display: flex; justify-content: center; }
+.lead { font-size: clamp(17px, 1.5vw, 20px); max-width: 680px; }
+.head { max-width: 860px; margin-bottom: clamp(36px, 5vw, 60px); }
+.head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.head.center .lead { margin: 18px auto 0; }
+.head h2 + .lead { margin-top: 18px; }
+.divider { width: 90px; height: 2px; background: var(--red-line); margin: 0 auto 26px; }
+.divider-l { width: 60px; height: 3px; background: linear-gradient(90deg, var(--red-bright), transparent); margin-bottom: 18px; }
+
+/* ---------- TODO placeholders (visibles a propósito) ---------- */
+.todo { display: inline-block; font-family: var(--mono); font-size: .78em; font-weight: 700; letter-spacing: .02em; text-transform: none; color: #ffd84d; background: rgba(255,216,77,.08); border: 1.5px dashed #ffd84d; padding: 2px 8px; line-height: 1.4; -webkit-text-fill-color: #ffd84d; }
+.on-steel .todo { color: #7a5b00; -webkit-text-fill-color: #7a5b00; background: rgba(255,200,0,.18); border-color: #b58900; }
+.todo-card { border: 2px dashed #ffd84d !important; background: repeating-linear-gradient(-45deg, rgba(255,216,77,.03) 0 12px, transparent 12px 24px), var(--card) !important; }
+.todo-tag { display: inline-block; font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #08080a; background: #ffd84d; padding: 4px 9px; margin-bottom: 14px; }
+
+/* ---------- buttons ---------- */
+.btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 50px; font-family: var(--display); font-weight: 900; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; text-decoration: none; padding: 14px 28px; color: #fff; isolation: isolate; cursor: pointer; border: 0; background: none; white-space: nowrap; }
+.btn::before { content: ""; position: absolute; inset: 0; z-index: -1; transform: skewX(-14deg); transition: transform .2s ease, background .2s ease, border-color .2s, box-shadow .2s; }
+.btn-red::before { background: linear-gradient(180deg, var(--red-bright), var(--red)); box-shadow: inset 0 1px 0 rgba(255,255,255,.25); }
+.btn-red:hover::before { background: var(--red-bright); transform: skewX(-14deg) scale(1.04); box-shadow: 0 14px 36px -10px rgba(224,30,43,.6); }
+.btn-line::before { border: 1.5px solid var(--silver-mid); }
+.btn-line:hover::before { border-color: #fff; }
+.on-steel .btn-line { color: var(--bg); }
+.on-steel .btn-line::before { border-color: var(--bg); }
+.btn .arr { font-style: normal; transition: transform .2s; }
+.btn:hover .arr { transform: translateX(4px); }
+
+/* ---------- streaks ---------- */
+.streaks { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.streaks i { position: absolute; height: 1px; width: 60%; background: var(--red-line); transform: rotate(-28deg); opacity: .5; }
+.streaks i:nth-child(1) { top: 18%; left: -18%; }
+.streaks i:nth-child(2) { top: 62%; right: -24%; width: 70%; opacity: .32; }
+.streaks i:nth-child(3) { top: 88%; left: 30%; width: 40%; opacity: .22; }
+
+/* ---------- cd-bar (top bar) + nav ---------- */
+.cd-bar { background: var(--red); text-align: center; font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 9px 16px; line-height: 1.5; }
+.cd-bar .sep { opacity: .55; margin: 0 10px; }
+.nav { position: sticky; top: 0; z-index: 40; background: rgba(8,8,10,.88); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid var(--bdr); }
+.nav .wrap { height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brand { display: inline-flex; align-items: center; text-decoration: none; min-height: 44px; }
+.brand img { height: 48px; width: auto; }
+.nav-links { display: flex; gap: 26px; font-size: 14px; font-weight: 600; color: var(--silver-mid); }
+.nav-links a { text-decoration: none; transition: color .2s; padding: 10px 0; }
+.nav-links a:hover { color: #fff; }
+.nav .btn { min-height: 44px; padding: 10px 18px; font-size: 11px; }
+
+/* ---------- hero ---------- */
+.hero { position: relative; padding: clamp(48px, 7vw, 92px) 0 clamp(64px, 8vw, 108px); background: radial-gradient(ellipse 60% 60% at 85% 40%, rgba(193,18,31,.22), transparent 70%), var(--bg); overflow: hidden; }
+.hero-grid { position: relative; display: grid; grid-template-columns: 1.02fr .98fr; gap: clamp(32px, 5vw, 64px); align-items: center; }
+.hero-grid > *, .bio-grid > * { min-width: 0; }
+.hero-pill { display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 11.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #fff; border: 1px solid rgba(224,30,43,.55); background: rgba(193,18,31,.12); padding: 8px 14px; margin-bottom: 22px; }
+.hero-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red-bright); box-shadow: 0 0 0 0 rgba(224,30,43,.7); animation: pulse 2s infinite; flex: none; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(224,30,43,.7); } 70% { box-shadow: 0 0 0 10px rgba(224,30,43,0); } 100% { box-shadow: 0 0 0 0 rgba(224,30,43,0); } }
+.hero h1 { margin-bottom: 20px; }
+.hero .lead { margin-bottom: 30px; }
+.hero-ctas { display: flex; gap: 22px; flex-wrap: wrap; margin-bottom: 38px; }
+.hero-facts { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--bdr); }
+.hero-facts div { padding: 16px 14px 0 0; }
+.hero-facts b { display: block; font-family: var(--display); font-weight: 900; font-size: clamp(24px, 2.4vw, 32px); line-height: 1; }
+.hero-facts small { display: block; margin-top: 6px; font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--silver-mid); line-height: 1.4; }
+
+/* video card */
+.vt-card { position: relative; padding: 10px; background: linear-gradient(135deg, #3a3d44, #121215 40%, #3a3d44 80%, #121215); }
+.vt-video { position: relative; aspect-ratio: 16/9; background: #000; overflow: hidden; }
+.vt-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.vt-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center; padding: 16px; background: linear-gradient(180deg, rgba(8,8,10,.15), rgba(8,8,10,.85)), url("https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://assets.cdn.filesafe.space/4o5wwWKbFhOEOaerWTE6/media/6a3313a65408771d16550b21.png") center 20% / cover no-repeat; }
+.vt-play { width: 68px; height: 68px; border-radius: 50%; background: linear-gradient(180deg, var(--red-bright), var(--red)); box-shadow: 0 10px 30px -6px rgba(224,30,43,.7); position: relative; }
+.vt-play::after { content: ""; position: absolute; left: 27px; top: 21px; border-style: solid; border-width: 13px 0 13px 20px; border-color: transparent transparent transparent #fff; }
+.vt-cap { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 6px 4px; font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--silver-mid); }
+.vt-cap b { color: #fff; }
+
+/* ---------- pain ---------- */
+.pain-top { display: grid; grid-template-columns: 1.2fr .8fr; gap: clamp(28px, 5vw, 72px); align-items: end; margin-bottom: clamp(36px, 5vw, 56px); }
+.pain-top p.big { font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .02em; font-size: clamp(16px, 1.5vw, 20px); line-height: 1.35; padding-left: 22px; border-left: 5px solid var(--red); color: var(--bg); }
+.pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.pain-card { background: var(--bg); color: #fff; padding: 26px 22px 24px; position: relative; overflow: hidden; transition: transform .25s ease; }
+.pain-card:hover { transform: translateY(-4px); }
+.pain-card::after { content: ""; position: absolute; right: -34px; bottom: -34px; width: 90px; height: 90px; border: 1px solid rgba(255,255,255,.08); transform: rotate(45deg); }
+.pain-card svg { width: 32px; height: 32px; stroke: var(--red-bright); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 16px; }
+.pain-card h3 { font-size: 17px; margin-bottom: 8px; }
+.pain-card p { color: var(--silver-mid); font-size: 15px; line-height: 1.55; }
+.pain-end { margin-top: clamp(40px, 5vw, 60px); }
+.pain-end p { font-size: clamp(18px, 1.8vw, 22px); font-weight: 600; color: #22252a; }
+.pain-end p.punch { font-family: var(--display); font-weight: 900; text-transform: uppercase; font-size: clamp(24px, 3vw, 38px); line-height: 1.15; margin-top: 12px; color: var(--bg); }
+
+/* ---------- bio ---------- */
+.bio-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+.bio-photo { position: relative; }
+.bio-photo img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: 50% 15%; clip-path: polygon(7% 0, 100% 0, 93% 100%, 0 100%); }
+.bio-photo .tag { position: absolute; left: 6%; bottom: 22px; background: var(--bg); border-left: 4px solid var(--red-bright); padding: 12px 16px; }
+.bio-photo .tag b { display: block; font-family: var(--display); font-weight: 900; text-transform: uppercase; font-size: 18px; line-height: 1.1; }
+.bio-photo .tag span { font-family: var(--mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--red-bright); }
+.bio-text p { margin-bottom: 16px; }
+.bio-quote { margin: 26px 0; padding: 22px 24px; background: var(--card); border-left: 4px solid var(--red-bright); font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: clamp(17px, 1.7vw, 21px); line-height: 1.3; color: #fff; }
+.bio-quote small { display: block; margin-top: 10px; font-family: var(--mono); font-size: 11px; letter-spacing: .14em; color: var(--silver-mid); font-weight: 700; }
+.bio-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 8px; }
+.bio-stat { background: var(--card); border-top: 3px solid var(--red); padding: 18px 16px; }
+.bio-stat b { display: block; font-family: var(--display); font-weight: 900; font-size: clamp(26px, 2.6vw, 34px); line-height: 1; }
+.bio-stat span { display: block; margin-top: 8px; font-size: 13.5px; color: var(--silver-mid); line-height: 1.35; }
+
+/* ---------- potros + numbers ---------- */
+.potros { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: start; }
+.potros-list { list-style: none; display: grid; gap: 0; }
+.potros-list li { display: grid; grid-template-columns: 30px 1fr; gap: 12px; padding: 14px 0; border-top: 1px solid var(--bdr-dark); font-weight: 600; color: #22252a; }
+.potros-list li::before { content: "✓"; width: 24px; height: 24px; display: grid; place-items: center; font-size: 13px; font-weight: 800; background: var(--red); color: #fff; margin-top: 1px; }
+.nums-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: clamp(40px, 5vw, 60px); }
+.num { background: var(--bg); color: #fff; padding: 26px 20px; text-align: center; position: relative; overflow: hidden; }
+.num::before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--red-bright), transparent); }
+.num b { display: block; font-family: var(--display); font-weight: 900; font-size: clamp(34px, 4vw, 52px); line-height: 1; }
+.num span { display: block; margin-top: 10px; font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--silver-mid); line-height: 1.45; }
+.num.todo-card b { font-size: clamp(16px, 1.6vw, 20px); color: #ffd84d; font-family: var(--mono); line-height: 1.3; }
+
+/* ---------- discoveries / pillars ---------- */
+.disc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(14px, 2vw, 22px); }
+.disc-card { background: var(--card); border: 1px solid var(--bdr); padding: clamp(26px, 3vw, 38px); position: relative; overflow: hidden; transition: border-color .25s, transform .25s, background .25s; }
+.disc-card:hover { border-color: rgba(224,30,43,.55); transform: translateY(-4px); background: var(--card-hover); }
+.disc-card::before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--red-bright), transparent); }
+.disc-n { display: block; font-family: var(--display); font-weight: 900; font-size: 54px; line-height: 1; margin-bottom: 14px; }
+.disc-card h3 { margin-bottom: 10px; }
+.disc-card p { font-size: 16px; }
+.disc-card ul { list-style: none; margin-top: 14px; display: grid; gap: 8px; }
+.disc-card li { position: relative; padding-left: 18px; font-size: 15px; color: var(--txt2); }
+.disc-card li::before { content: ""; position: absolute; left: 0; top: .65em; width: 8px; height: 2px; background: var(--red-bright); }
+.disc-foot { margin-top: clamp(36px, 5vw, 52px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+.disc-foot p { max-width: 640px; font-family: var(--display); font-weight: 800; text-transform: uppercase; font-size: clamp(20px, 2.2vw, 28px); line-height: 1.12; color: #fff; }
+
+/* ---------- testimonials ---------- */
+.testi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(14px, 2vw, 22px); }
+.testi { margin: 0; background: var(--card-hover); border-top: 3px solid var(--red); display: flex; flex-direction: column; }
+.loom { position: relative; display: block; width: 100%; aspect-ratio: 16/9; padding: 0; border: 0; background: radial-gradient(ellipse at center, #26262c, #0b0b0d); cursor: pointer; overflow: hidden; }
+.loom img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.loom:hover img { transform: scale(1.04); }
+.loom iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.loom-play { position: absolute; left: 50%; top: 50%; width: 58px; height: 58px; transform: translate(-50%, -50%); background: linear-gradient(180deg, var(--red-bright), var(--red)); border-radius: 50%; box-shadow: 0 10px 30px -6px rgba(224,30,43,.7); transition: transform .2s ease; }
+.loom-play::after { content: ""; position: absolute; left: 23px; top: 18px; border-style: solid; border-width: 11px 0 11px 17px; border-color: transparent transparent transparent #fff; }
+.loom:hover .loom-play { transform: translate(-50%, -50%) scale(1.08); }
+.testi blockquote { margin: 0; padding: 20px 20px 24px; color: #d4d6db; font-size: 15px; line-height: 1.5; }
+.testi blockquote b { display: block; margin-top: 8px; font-family: var(--display); font-weight: 900; text-transform: uppercase; font-size: 15px; line-height: 1.15; color: #fff; }
+.stars { color: var(--silver); letter-spacing: 3px; font-size: 13px; margin-bottom: 8px; }
+
+/* ---------- casos de éxito ---------- */
+.case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 2vw, 22px); margin-top: clamp(28px, 4vw, 44px); }
+.case { background: var(--card); border: 1px solid var(--bdr); padding: clamp(24px, 3vw, 32px); display: flex; flex-direction: column; gap: 12px; }
+.case .who { display: flex; align-items: center; gap: 14px; }
+.case .av { width: 48px; height: 48px; flex: none; display: grid; place-items: center; font-family: var(--display); font-weight: 900; font-size: 17px; background: linear-gradient(180deg, var(--red-bright), var(--red)); clip-path: polygon(14% 0, 100% 0, 86% 100%, 0 100%); }
+.case .who b { display: block; font-family: var(--display); font-weight: 900; text-transform: uppercase; font-size: 16px; line-height: 1.15; }
+.case .who span { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--silver-mid); }
+.case .ba-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.case .ba-row div { background: rgba(255,255,255,.03); border: 1px solid var(--bdr); padding: 10px 12px; font-size: 13.5px; }
+.case .ba-row small { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--silver-mid); margin-bottom: 4px; }
+.case p { font-size: 15px; }
+.case .quote { font-size: 16px; color: #fff; font-weight: 600; line-height: 1.5; }
+.case .quote-more { font-size: 14.5px; }
+
+/* ---------- viviras / incluye ---------- */
+.viviras-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--bdr-dark); }
+.viv { padding: 28px 22px 30px; border-bottom: 1px solid var(--bdr-dark); border-left: 1px solid var(--bdr-dark); }
+.viv:nth-child(3n+1) { border-left: 0; }
+.viv b { display: block; font-family: var(--display); font-weight: 900; font-size: 40px; line-height: 1; color: var(--red); margin-bottom: 12px; }
+.viv h3 { margin-bottom: 8px; color: var(--bg); }
+.viv p { font-size: 15.5px; }
+.viv-more { margin-top: clamp(32px, 4vw, 48px); padding: clamp(26px, 3.4vw, 40px); background: var(--bg); color: #fff; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 22px; }
+.viv-more p { color: #d4d6db; max-width: 620px; font-size: clamp(17px, 1.7vw, 20px); }
+.viv-more p strong { color: #fff; }
+
+/* ---------- form ---------- */
+.form-section { background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(193,18,31,.18), transparent 70%), var(--bg); }
+.form-card { max-width: 720px; margin: 0 auto; background: var(--card); border: 1px solid var(--bdr); border-top: 3px solid var(--red-bright); padding: clamp(14px, 2.4vw, 26px); scroll-margin-top: 96px; }
+.form-card iframe { width: 100%; min-height: 640px; border: none; display: block; background: transparent; }
+.form-note { text-align: center; font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--silver-mid); margin-top: 16px; }
+.form-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 720px; margin: 0 auto 26px; }
+.form-steps div { text-align: center; padding: 14px 10px; border: 1px solid var(--bdr); }
+.form-steps b { display: block; font-family: var(--display); font-weight: 900; color: var(--red-bright); font-size: 22px; line-height: 1; }
+.form-steps span { display: block; margin-top: 6px; font-size: 13.5px; color: var(--txt2); line-height: 1.35; }
+
+/* ---------- dual ---------- */
+.dual-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 2.4vw, 26px); }
+.dual { padding: clamp(28px, 3.6vw, 44px); }
+.dual.a { background: #fff; box-shadow: 0 20px 50px -30px rgba(0,0,0,.35); }
+.dual.b { background: var(--bg); color: #fff; }
+.dual.b p { color: #d4d6db; }
+.dual .eyebrow { margin-bottom: 12px; }
+.dual h3 { font-size: clamp(21px, 2.4vw, 28px); margin-bottom: 14px; }
+.dual p { margin-bottom: 22px; }
+
+/* ---------- cta band ---------- */
+.cta-band { position: relative; overflow: hidden; background: linear-gradient(120deg, var(--red-deep), var(--red) 55%, var(--red-bright)); text-align: center; padding: clamp(64px, 8vw, 100px) 0; }
+.cta-band::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(-28deg, rgba(255,255,255,.04) 0 2px, transparent 2px 22px); pointer-events: none; }
+.cta-band .wrap-sm { position: relative; z-index: 1; }
+.cta-band h2 { color: #fff; margin-bottom: 18px; }
+.cta-band p { color: rgba(255,255,255,.88); font-size: clamp(17px, 1.6vw, 20px); margin-bottom: 30px; }
+.btn-white { color: var(--red); }
+.btn-white::before { background: #fff; }
+.btn-white:hover::before { transform: skewX(-14deg) scale(1.04); box-shadow: 0 14px 36px -10px rgba(0,0,0,.5); }
+
+/* ---------- faq ---------- */
+.faq-list { display: grid; gap: 10px; }
+.faq-item { background: var(--card); border: 1px solid var(--bdr); transition: border-color .2s; }
+.faq-item.open { border-color: rgba(224,30,43,.55); }
+.faq-btn { width: 100%; min-height: 60px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; background: none; border: 0; color: #fff; cursor: pointer; text-align: left; font-family: var(--display); font-weight: 800; font-size: clamp(15px, 1.5vw, 17px); text-transform: uppercase; line-height: 1.3; }
+.faq-icon { flex: none; width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid var(--bdr); transition: transform .3s, background .3s; }
+.faq-icon svg { width: 12px; height: 12px; stroke: #fff; stroke-width: 1.8; }
+.faq-item.open .faq-icon { transform: rotate(45deg); background: var(--red); border-color: var(--red); }
+.faq-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s ease; }
+.faq-body > * { overflow: hidden; }
+.faq-item.open .faq-body { grid-template-rows: 1fr; }
+.faq-a { padding: 0 22px; font-size: 16px; }
+.faq-item.open .faq-a { padding-bottom: 20px; }
+
+/* ---------- footer ---------- */
+footer { border-top: 1px solid var(--bdr); padding: 44px 0 110px; color: var(--silver-dark); font-size: 14px; }
+.footer-inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px; }
+.footer-inner img { height: 72px; width: auto; }
+.footer-brand { font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--silver-mid); }
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 18px; font-size: 13px; }
+.footer-links a { color: var(--silver-mid); text-decoration: none; padding: 12px 2px; display: inline-block; }
+.footer-links a:hover { color: #fff; }
+.legal { max-width: 760px; margin: 6px auto 0; font-size: 11px; line-height: 1.6; color: var(--silver-dark); text-align: center; }
+.legal p { margin: 0 0 8px; color: var(--silver-dark); line-height: 1.6; }
+.legal a { color: var(--silver-mid); }
+.footer-copy { text-align: center; color: var(--silver-dark); font-size: 13px; margin-top: 10px; }
+
+/* ---------- sticky mobile CTA ---------- */
+.sticky-cta { display: none; }
+
+/* ---------- reveal ---------- */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
+.reveal.in { opacity: 1; transform: none; }
+.reveal.d1 { transition-delay: .08s; } .reveal.d2 { transition-delay: .16s; } .reveal.d3 { transition-delay: .24s; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } .hero-pill .dot { animation: none; } }
+
+/* ---------- responsive ---------- */
+@media (max-width: 1024px) {
+  .hero-grid, .bio-grid, .pain-top, .potros { grid-template-columns: 1fr; }
+  .bio-photo { max-width: 460px; margin: 0 auto; width: 100%; }
+  .pain-grid { grid-template-columns: repeat(2, 1fr); }
+  .testi-grid { grid-template-columns: repeat(2, 1fr); }
+  .case-grid { grid-template-columns: repeat(2, 1fr); }
+  .viviras-grid { grid-template-columns: repeat(2, 1fr); }
+  .viv:nth-child(3n+1) { border-left: 1px solid var(--bdr-dark); }
+  .viv:nth-child(2n+1) { border-left: 0; }
+  .nav-links { display: none; }
+}
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+  .btn { white-space: normal; text-align: center; }
+  .hero-grid > *, .bio-grid > *, .potros > *, .pain-top > * { min-width: 0; }
+  .cd-bar { font-size: 10px; letter-spacing: .08em; padding: 8px 12px; }
+  .cd-bar .hide-sm { display: none; }
+  .nav .wrap { height: 62px; }
+  .brand img { height: 40px; }
+  .nav .btn { padding: 8px 14px; font-size: 10.5px; min-height: 44px; }
+  .hero { padding-top: 36px; }
+  .hero-text, .head, .pain-top, .pain-end, .bio-text, .disc-foot, .potros > div:first-child, .dual { text-align: center; }
+  .eyebrow { justify-content: center; display: flex; }
+  .eyebrow::before { display: none; }
+  .lead { margin-left: auto; margin-right: auto; }
+  .hero-ctas, .disc-foot, .viv-more { justify-content: center; text-align: center; }
+  .hero-ctas .btn { width: calc(100% - 16px); margin: 0 auto; }
+  .hero-ctas { gap: 14px; }
+  .hero-facts div { text-align: center; padding: 16px 6px 0; }
+  .hero-facts small { font-size: 9.5px; letter-spacing: .08em; }
+  .pain-top p.big { border-left: 0; padding-left: 0; }
+  .pain-top p.big::before { content: ""; display: block; width: 60px; height: 4px; background: var(--red); margin: 0 auto 16px; }
+  .pain-grid { grid-template-columns: 1fr; }
+  .pain-card { text-align: left; }
+  .bio-quote { text-align: left; }
+  .bio-stats { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .bio-stat { padding: 14px 8px; text-align: center; }
+  .bio-stat span { font-size: 12px; }
+  .nums-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .num { padding: 20px 10px; }
+  .num span { font-size: 10px; letter-spacing: .08em; }
+  .potros-list li { text-align: left; }
+  .disc-grid, .testi-grid, .case-grid, .dual-wrap, .form-steps { grid-template-columns: 1fr; }
+  .form-steps div { display: flex; align-items: center; gap: 14px; text-align: left; }
+  .form-steps span { margin-top: 0; }
+  .viviras-grid { grid-template-columns: 1fr; }
+  .viv, .viv:nth-child(n) { border-left: 0; text-align: center; padding: 24px 6px; }
+  .disc-foot .btn, .viv-more .btn, .dual .btn, .cta-band .btn { width: calc(100% - 16px); }
+  .form-card { padding: 8px; }
+  .faq-btn { padding: 16px 16px; }
+  .faq-a { padding: 0 16px; }
+  .sticky-cta { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; background: rgba(8,8,10,.96); border-top: 2px solid var(--red); padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); align-items: center; justify-content: space-between; gap: 12px; transform: translateY(110%); transition: transform .3s ease; }
+  .sticky-cta.show { transform: none; }
+  .sticky-cta small { font-family: var(--mono); font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--silver-mid); line-height: 1.35; }
+  .sticky-cta small b { color: #fff; display: block; }
+  .sticky-cta .btn { padding: 10px 16px; font-size: 11px; min-height: 44px; }
+}
+@media (max-width: 400px) {
+  h1 { font-size: 27px; }
+  h2 { font-size: 24px; }
+  .btn { white-space: normal; text-align: center; }
+  .bio-stat b { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== CD-BAR (barra superior, sin countdown) ===== -->
+<div class="cd-bar">Mentoría One Empire<span class="sep">/</span>Para empresarios latinos de la construcción<span class="hide-sm"><span class="sep">/</span>Cupos limitados por trimestre</span></div>
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="One Empire"><img src="https://assets.cdn.filesafe.space/4o5wwWKbFhOEOaerWTE6/media/6abfcbaf150d6ea53db13e67.png" alt="One Empire"/></a>
+    <nav class="nav-links" aria-label="Secciones">
+      <a href="#hugo">Quién es Hugo</a>
+      <a href="#mentoria">La mentoría</a>
+      <a href="#casos">Casos de éxito</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
+    <a class="btn btn-red" href="#aplicar">Aplicar <span class="arr">→</span></a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="streaks" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap hero-grid">
+    <div class="hero-text reveal">
+      <span class="hero-pill"><span class="dot"></span>Mentoría con Hugo Pérez</span>
+      <h1><span class="chrome">Las grandes transformaciones no empiezan cuando </span><span class="red">trabajas más.</span></h1>
+      <p class="lead">Hugo Pérez casi quiebra a los 2 años de fundar <strong>Potros Construction</strong>. En los siguientes <strong>9 meses superó $1M en facturación</strong>. Hoy, desde <strong>One Empire</strong>, mentorea a empresarios y contratistas latinos para que hagan ese mismo cambio en su empresa.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-red" href="#aplicar">Quiero aplicar a la mentoría <span class="arr">→</span></a>
+        <a class="btn btn-line" href="#hugo">Conoce la historia</a>
+      </div>
+      <div class="hero-facts">
+        <div><b class="chrome">$1M+</b><small>Facturación en 9 meses</small></div>
+        <div><b class="chrome">4 años</b><small>Construyendo en EE.&nbsp;UU.</small></div>
+        <div><b class="chrome">2</b><small>Empresas fundadas</small></div>
+      </div>
+    </div>
+    <div class="reveal d2">
+      <div class="vt-card">
+        <div class="vt-video">
+          <!-- TODO: pegar aquí el src del video (Loom/YouTube) de Hugo presentando la mentoría.
+               Cuando el iframe tenga src, el placeholder se oculta solo (misma lógica del template). -->
+          <iframe src="" title="Hugo Pérez · Mentoría One Empire" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <div class="vt-placeholder">
+            <span class="vt-play" aria-hidden="true"></span>
+            <span class="todo">[TODO: video de Hugo para la mentoría]</span>
+          </div>
+        </div>
+        <div class="vt-cap"><span><b>Hugo Pérez</b> · Fundador</span><span>One Empire · Potros</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PAIN ===== -->
+<section class="section on-steel">
+  <div class="wrap">
+    <div class="pain-top">
+      <div class="reveal">
+        <span class="eyebrow">Lo que vemos en los contratistas latinos</span>
+        <h2>Sabes construir. <span class="red">Lo difícil es hacer crecer la empresa.</span></h2>
+      </div>
+      <p class="big reveal d1">Más obras no siempre significan más ganancia. A veces solo significan más horas.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <h3>Trabajas de sol a sol</h3>
+        <p>Y aun así sientes que la empresa no avanza al ritmo que debería.</p>
+      </div>
+      <div class="pain-card reveal d1">
+        <svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 5-6"/></svg>
+        <h3>No conoces tus números</h3>
+        <p>Facturas, pero no sabes con certeza cuánto ganas realmente en cada proyecto.</p>
+      </div>
+      <div class="pain-card reveal d2">
+        <svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/></svg>
+        <h3>Vendes solo con un presupuesto</h3>
+        <p>Mandas el número, cruzas los dedos y compites por precio contra todos.</p>
+      </div>
+      <div class="pain-card reveal">
+        <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M17 11l2 2 3-4"/></svg>
+        <h3>Todo depende de ti</h3>
+        <p>Si tú no estás en la obra o en el teléfono, las cosas se detienen.</p>
+      </div>
+      <div class="pain-card reveal d1">
+        <svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg>
+        <h3>Te ven igual que a los demás</h3>
+        <p>El cliente no encuentra una razón clara para elegirte a ti.</p>
+      </div>
+      <div class="pain-card reveal d2">
+        <svg viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+        <h3>Decides solo</h3>
+        <p>Sin alguien que ya recorrió el camino y te diga qué sí y qué no.</p>
+      </div>
+    </div>
+    <div class="pain-end reveal">
+      <p>No te falta trabajo ni ganas.</p>
+      <p class="punch">Te falta la información correcta y <span class="red">alguien que ya lo vivió.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BIO (Hugo / Potros) ===== -->
+<section class="section" id="hugo">
+  <div class="streaks" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap bio-grid">
+    <div class="bio-photo reveal">
+      <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://assets.cdn.filesafe.space/4o5wwWKbFhOEOaerWTE6/media/6a3313a65408771d16550b21.png" alt="Hugo Pérez, fundador de One Empire y Potros Construction" loading="lazy"/>
+      <div class="tag"><b>Hugo Pérez</b><span>Fundador · One Empire &amp; Potros</span></div>
+    </div>
+    <div class="bio-text reveal d1">
+      <span class="eyebrow">Quiénes somos</span>
+      <h2><span class="chrome">De casi quebrar a </span><span class="red">más de $1M en 9 meses</span></h2>
+      <div class="divider-l" style="margin-top:22px"></div>
+      <p>Hugo Pérez fundó <strong>Potros Construction</strong> hace 4 años en Estados Unidos. A los 2 años, la empresa estuvo a punto de quebrar.</p>
+      <p>No fue trabajando más horas como salió adelante. Fue cambiando la forma de dirigir: rodearse de las personas correctas, conocer sus números, aprender a vender más allá de un presupuesto y diferenciarse. En <strong>9 meses</strong>, Potros pasó a facturar <strong>más de $1M</strong>.</p>
+      <p>De ahí nace <strong>One Empire</strong>: una empresa enfocada en el crecimiento de los empresarios latinos, para compartir lo que funcionó en una empresa de construcción real.</p>
+      <div class="bio-quote">“Las grandes transformaciones no empiezan cuando trabajas más…”<small>— Hugo Pérez</small></div>
+      <div class="bio-stats">
+        <div class="bio-stat"><b class="chrome">$1M+</b><span>en 9 meses</span></div>
+        <div class="bio-stat"><b class="chrome">4</b><span>años en EE.&nbsp;UU.</span></div>
+        <div class="bio-stat"><b class="chrome">2</b><span>empresas</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== POTROS + NÚMEROS ===== -->
+<section class="section on-steel">
+  <div class="wrap">
+    <div class="potros">
+      <div class="reveal">
+        <span class="eyebrow">La empresa detrás de la historia</span>
+        <h2>Potros Construction: <span class="red">el laboratorio real</span></h2>
+        <p class="lead" style="margin-top:18px">Todo lo que se enseña en la mentoría se probó primero en una constructora de verdad, con obras, equipo y clientes reales.</p>
+      </div>
+      <ul class="potros-list reveal d1">
+        <li>Empresa de hardscape y outdoor living con base en Winchester, Virginia</li>
+        <li>Decks, patios, porches, fireplaces y landscaping</li>
+        <li>Licensed &amp; insured</li>
+        <li>Atiende el Shenandoah Valley y Loudoun County</li>
+      </ul>
+    </div>
+    <div class="nums-grid">
+      <div class="num reveal"><b class="chrome">$1M+</b><span>Facturación alcanzada en 9 meses</span></div>
+      <div class="num reveal d1"><b class="chrome">4 años</b><span>Construyendo empresa en EE.&nbsp;UU.</span></div>
+      <div class="num reveal d2"><b class="chrome">2</b><span>Empresas: Potros &amp; One Empire</span></div>
+      <div class="num reveal"><b class="chrome">100+</b><span>Empresarios mentoreados</span></div>
+      <div class="num reveal d1"><b class="chrome">69+</b><span>Proyectos realizados en Potros</span></div>
+      <div class="num reveal d2"><b class="chrome">100%</b><span>Probado en obra real, no en teoría</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== POR QUÉ MENTORÍA (4 descubrimientos) ===== -->
+<section class="section" id="mentoria">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow eyebrow-c">Por qué mentorearte con One Empire</span>
+      <h2><span class="chrome">Los 4 descubrimientos que cambiaron Potros, </span><span class="red">aplicados a tu empresa</span></h2>
+      <p class="lead">La mentoría trabaja sobre los mismos cuatro pilares que llevaron a Potros de casi quebrar a más de $1M. No es teoría: es lo que funcionó en una constructora latina real.</p>
+    </div>
+    <div class="disc-grid">
+      <div class="disc-card reveal">
+        <span class="disc-n chrome">01</span>
+        <h3>Las personas correctas</h3>
+        <p>Tu empresa crece hasta donde crece tu equipo y las personas de las que te rodeas.</p>
+        <ul><li>A quién sumar y a quién no</li><li>Cómo soltar tareas con confianza</li></ul>
+      </div>
+      <div class="disc-card reveal d1">
+        <span class="disc-n chrome">02</span>
+        <h3>Conocer tus números</h3>
+        <p>Decidir con datos, no de memoria: cuánto cuesta, cuánto ganas y dónde se va el dinero.</p>
+        <ul><li>Claridad en cada proyecto</li><li>Precios que sí dejan ganancia</li></ul>
+      </div>
+      <div class="disc-card reveal">
+        <span class="disc-n chrome">03</span>
+        <h3>Vender es más que un presupuesto</h3>
+        <p>El cliente no compra un número: compra confianza. Aprende a vender el valor de tu trabajo.</p>
+        <ul><li>Un proceso de venta claro</li><li>Dejar de competir solo por precio</li></ul>
+      </div>
+      <div class="disc-card reveal d1">
+        <span class="disc-n chrome">04</span>
+        <h3>Diferenciarte</h3>
+        <p>Que el cliente tenga una razón clara para elegirte a ti y no al de al lado.</p>
+        <ul><li>Tu posicionamiento en el mercado</li><li>Una marca que se recuerda</li></ul>
+      </div>
+    </div>
+    <div class="disc-foot reveal">
+      <p>Cuatro pilares. <span class="red">Una empresa que crece</span> sin depender solo de tus horas.</p>
+      <a class="btn btn-red" href="#aplicar">Aplicar a la mentoría <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CASOS DE ÉXITO / TESTIMONIOS ===== -->
+<section class="section carbon" id="casos">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow eyebrow-c">Casos de éxito</span>
+      <h2><span class="chrome">Ellos ya </span><span class="red">dieron el paso</span></h2>
+      <p class="lead">Dueños de empresas de construcción que trabajaron con One Empire. Escúchalos en sus propias palabras.</p>
+    </div>
+
+    <!-- Video-testimonios reales de One Empire (mismos Loom que la landing de Tampa) -->
+    <div class="testi-grid">
+      <figure class="testi reveal">
+        <button type="button" class="loom" data-loom="8c361fa24e49486492264ece30db6b18" aria-label="Reproducir testimonio"><img src="https://assets.cdn.filesafe.space/4o5wwWKbFhOEOaerWTE6/media/6a398b9f7b00529580a61030.png" alt="" loading="lazy" onerror="this.remove()"/><span class="loom-play" aria-hidden="true"></span></button>
+        <blockquote><div class="stars">★★★★★</div>"Pensaba que el problema era mi equipo<b>pero realmente era que yo no tenía la información correcta"</b></blockquote>
+      </figure>
+      <figure class="testi reveal d1">
+        <button type="button" class="loom" data-loom="e1443d2d4e1f4001b41f70f147317ccb" aria-label="Reproducir testimonio"><img src="https://assets.cdn.filesafe.space/4o5wwWKbFhOEOaerWTE6/media/6a398bee9104de6d76110837.png" alt="" loading="lazy" onerror="this.remove()"/><span class="loom-play" aria-hidden="true"></span></button>
+        <blockquote><div class="stars">★★★★★</div>"Vi otras personas que quieren crecer<b>y tienen la misma mentalidad y metas que yo"</b></blockquote>
+      </figure>
+      <figure class="testi reveal d2">
+        <button type="button" class="loom" data-loom="b1f5e4a72eb747e49cd0962b270cd076" aria-label="Reproducir testimonio"><img src="https://assets.cdn.filesafe.space/4o5wwWKbFhOEOaerWTE6/media/6a398b3628e2dab9ea46da3a.png" alt="" loading="lazy" onerror="this.remove()"/><span class="loom-play" aria-hidden="true"></span></button>
+        <blockquote><div class="stars">★★★★★</div>"En un punto quisiera tener un equipo así<b>con ese entusiasmo, energía y valores"</b></blockquote>
+      </figure>
+      <figure class="testi reveal d3">
+        <button type="button" class="loom" data-loom="70ff204968e04351b896ed805740143b" aria-label="Reproducir testimonio"><img src="https://assets.cdn.filesafe.space/4o5wwWKbFhOEOaerWTE6/media/6a398c3f9104de6d76111139.png" alt="" loading="lazy" onerror="this.remove()"/><span class="loom-play" aria-hidden="true"></span></button>
+        <blockquote><div class="stars">★★★★★</div>"Sé que quieres que todo sea perfecto<b>pero eso realmente es lo que te va a detener"</b></blockquote>
+      </figure>
+    </div>
+
+    <!-- Casos con nombre (del template Frontera). TODO: pegar textos/resultados reales -->
+    <div class="case-grid">
+      <article class="case reveal">
+        <div class="who"><span class="av">FC</span><div><b>Fernando Cruz</b><span>Cliente One Empire</span></div></div>
+        <div class="stars">★★★★★</div>
+        <p class="quote">“En dos meses he hecho tantas cosas que creo que ni en dos años se hubieran hecho.”</p>
+        <p class="quote-more">Desde platicar la idea de la compañía hasta poner a su hijo a estudiar para la licencia —cuatro semanas de estudio todos los días— y gestionar licencias y aseguranzas, todo en cerca de un mes.</p>
+        <div class="ba-row"><div><small>Antes</small>Solo la idea de la compañía</div><div><small>Después</small>Licencia y seguros en marcha en ~1 mes</div></div>
+      </article>
+      <article class="case reveal d1">
+        <div class="who"><span class="av">S</span><div><b>Samuel</b><span>Cliente One Empire</span></div></div>
+        <p><span class="todo">[TODO: cita de Samuel + su Loom del template Frontera]</span></p>
+        <div class="ba-row"><div><small>Antes</small><span class="todo">[TODO]</span></div><div><small>Después</small><span class="todo">[TODO]</span></div></div>
+      </article>
+      <article class="case reveal d2">
+        <div class="who"><span class="av">HR</span><div><b>Hugo &amp; Roxana Benitez</b><span>Clientes One Empire</span></div></div>
+        <p><span class="todo">[TODO: cita del testimonio del template Frontera]</span></p>
+        <div class="ba-row"><div><small>Antes</small><span class="todo">[TODO]</span></div><div><small>Después</small><span class="todo">[TODO]</span></div></div>
+      </article>
+      <article class="case reveal">
+        <div class="who"><span class="av">JF</span><div><b>Jose Flores</b><span>Cliente One Empire</span></div></div>
+        <p><span class="todo">[TODO: cita del testimonio del template Frontera]</span></p>
+        <div class="ba-row"><div><small>Antes</small><span class="todo">[TODO]</span></div><div><small>Después</small><span class="todo">[TODO]</span></div></div>
+      </article>
+      <article class="case todo-card reveal d1">
+        <span class="todo-tag">Placeholder</span>
+        <div class="who"><span class="av">?</span><div><b>[Nombre del cliente]</b><span>[Empresa · ciudad]</span></div></div>
+        <p><span class="todo">[Caso de éxito – resultado antes/después con cifras reales]</span></p>
+      </article>
+      <article class="case todo-card reveal d2">
+        <span class="todo-tag">Placeholder</span>
+        <div class="who"><span class="av">?</span><div><b>[Nombre del cliente]</b><span>[Empresa · ciudad]</span></div></div>
+        <p><span class="todo">[Caso de éxito – resultado antes/después con cifras reales]</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUÉ INCLUYE (viviras-grid) ===== -->
+<section class="section on-steel">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Qué incluye la mentoría</span>
+      <h2>Dejar de pensar como contratista y <span class="red">empezar a pensar como empresario</span></h2>
+    </div>
+    <div class="viviras-grid">
+      <div class="viv reveal"><b>01</b><h3>Mentoría con Hugo</h3><p>Acompañamiento directo de quien ya llevó una constructora de casi quebrar a $1M+. <span class="todo">[TODO: formato y frecuencia]</span></p></div>
+      <div class="viv reveal d1"><b>02</b><h3>Diagnóstico de tu empresa</h3><p>Dónde estás hoy, qué te está frenando y cuál es el siguiente paso.</p></div>
+      <div class="viv reveal d2"><b>03</b><h3>Tus números claros</h3><p>Entender tu operación para decidir con datos y cobrar lo que vale tu trabajo.</p></div>
+      <div class="viv reveal"><b>04</b><h3>Proceso de ventas</h3><p>Cómo pasar de mandar presupuestos a cerrar proyectos con confianza.</p></div>
+      <div class="viv reveal d1"><b>05</b><h3>Equipo y diferenciación</h3><p>Las personas correctas y una propuesta que te separe de la competencia.</p></div>
+      <div class="viv reveal d2"><b>06</b><h3>Comunidad de empresarios</h3><p>Rodearte de dueños latinos con la misma mentalidad y metas. <span class="todo">[TODO: confirmar]</span></p></div>
+    </div>
+    <div class="viv-more reveal">
+      <p>Y lo que más vale… <strong>vas a dirigir tu empresa de construcción de una forma distinta.</strong></p>
+      <a class="btn btn-red" href="#aplicar">Quiero aplicar <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FORM (GHL) ===== -->
+<section class="section form-section" id="aplicar">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow eyebrow-c">Aplica a la mentoría</span>
+      <h2><span class="chrome">Da el primer paso: </span><span class="red">agenda tu llamada</span></h2>
+      <p class="lead">Cuéntanos sobre tu empresa. Revisamos cada aplicación y, si hay encaje, te contactamos para una llamada con el equipo de One Empire.</p>
+    </div>
+    <div class="form-steps reveal">
+      <div><b>01</b><span>Llenas la aplicación</span></div>
+      <div><b>02</b><span>Revisamos tu caso</span></div>
+      <div><b>03</b><span>Agendamos tu llamada</span></div>
+    </div>
+    <div class="form-card reveal" id="form">
+      <!-- TODO: reemplazar con el form GHL de mentoría -->
+      <!-- PLACEHOLDER: este ID (FLihryBSWnTs9emHag67) es el form de registro de Next Level Leaders Tampa.
+           Solo está para que el layout renderice. Las pruebas enviadas aquí entrarían a ese form/pipeline. -->
+      <iframe
+        src="https://api.leadconnectorhq.com/widget/form/FLihryBSWnTs9emHag67"
+        style="width:100%;height:100%;border:none;border-radius:0"
+        id="inline-FLihryBSWnTs9emHag67"
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name="[TODO] Mentoría One Empire"
+        data-height="640"
+        data-layout-iframe-id="inline-FLihryBSWnTs9emHag67"
+        data-form-id="FLihryBSWnTs9emHag67"
+        title="Aplicación a la Mentoría One Empire">
+      </iframe>
+      <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+    </div>
+    <p class="form-note">Sin compromiso · Tus datos están seguros · Respuesta del equipo One Empire</p>
+  </div>
+</section>
+
+<!-- ===== DUAL ===== -->
+<section class="section on-steel">
+  <div class="wrap dual-wrap">
+    <div class="dual a reveal">
+      <span class="eyebrow">¿Ya aplicaste?</span>
+      <h3>Estás un paso más cerca</h3>
+      <p>Mantente pendiente de tu teléfono y tu correo: el equipo de One Empire te va a contactar para coordinar tu llamada.</p>
+      <a class="btn btn-line" href="#casos">Mientras tanto, ve los casos</a>
+    </div>
+    <div class="dual b reveal d1">
+      <span class="eyebrow">¿Todavía lo estás pensando?</span>
+      <h3>Aún estás a tiempo</h3>
+      <p>Seguir trabajando más horas no va a llevar tu empresa más lejos. Lo que la lleva más lejos es tener la información correcta y a alguien que ya lo vivió.</p>
+      <a class="btn btn-red" href="#aplicar">Aplicar ahora <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<section class="cta-band">
+  <div class="wrap-sm reveal">
+    <h2>Las grandes transformaciones no empiezan cuando trabajas más…</h2>
+    <p>Empiezan cuando decides dirigir tu empresa de otra forma. Hugo lo hizo con Potros. Ahora es tu turno.</p>
+    <a class="btn btn-white" href="#aplicar">Quiero mi llamada de mentoría <span class="arr">→</span></a>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section" id="faq">
+  <div class="wrap-sm">
+    <div class="head center reveal">
+      <span class="eyebrow eyebrow-c">Preguntas frecuentes</span>
+      <h2 class="chrome">Antes de aplicar</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-btn" onclick="faqToggle(this)"><span class="faq-q">¿Para quién es la mentoría?</span><span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span></button>
+        <div class="faq-body"><p class="faq-a">Para empresarios y contratistas latinos de la construcción que ya tienen su empresa y quieren hacerla crecer con orden: mejores números, mejores ventas, el equipo correcto y una marca que se diferencie.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="faqToggle(this)"><span class="faq-q">¿Es una mentoría técnica de construcción?</span><span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span></button>
+        <div class="faq-body"><p class="faq-a">No. Es una mentoría empresarial: cómo crecer, diferenciarte y construir un negocio más rentable, a partir de lo que transformó una empresa de construcción real como Potros.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="faqToggle(this)"><span class="faq-q">¿Cuánto cuesta y cuánto dura?</span><span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span></button>
+        <div class="faq-body"><p class="faq-a">Te lo explicamos en la llamada, según la etapa de tu empresa. <span class="todo">[TODO: confirmar respuesta oficial sobre precio/duración]</span></p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="faqToggle(this)"><span class="faq-q">¿Es en español?</span><span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span></button>
+        <div class="faq-body"><p class="faq-a">Sí. One Empire está enfocada en el crecimiento de los empresarios latinos en Estados Unidos. <span class="todo">[TODO: confirmar]</span></p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="faqToggle(this)"><span class="faq-q">¿Qué pasa después de aplicar?</span><span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span></button>
+        <div class="faq-body"><p class="faq-a">Revisamos tu aplicación y, si hay encaje, el equipo te contacta para agendar una llamada y conocer tu empresa.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="faqToggle(this)"><span class="faq-q">¿Garantizan resultados?</span><span class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></span></button>
+        <div class="faq-body"><p class="faq-a">No. Los resultados dependen del compromiso, el punto de partida, el tipo de empresa y el mercado de cada persona. Lo que sí te damos es la información y el acompañamiento de quien ya recorrió el camino.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <img src="https://assets.cdn.filesafe.space/4o5wwWKbFhOEOaerWTE6/media/6abfcbaf150d6ea53db13e67.png" alt="One Empire" loading="lazy"/>
+      <span class="footer-brand">One Empire · Mentoría</span>
+      <nav class="footer-links" aria-label="Legal">
+        <a href="https://yosoyempresarioone.com/politica-de-privacidad-2842" target="_blank" rel="noopener">Privacidad</a>
+        <a href="https://yosoyempresarioone.com/trminos-y-condiciones" target="_blank" rel="noopener">Términos</a>
+        <a href="#aplicar">Contacto</a>
+      </nav>
+      <div class="legal">
+        <p>Los resultados varían según el compromiso, el tiempo dedicado, el punto de partida, el tipo de empresa, el mercado y otros factores de cada persona. Los casos y testimonios que se muestran son experiencias individuales y no representan resultados típicos. No garantizamos ingresos, clientes, contratos ni crecimiento específicos en un plazo determinado.</p>
+        <p>Este sitio no forma parte del sitio web de Facebook ni de Meta Platforms, Inc. Además, este sitio NO está respaldado por Facebook ni por Meta de ninguna manera. FACEBOOK es una marca registrada de Meta Platforms, Inc.</p>
+      </div>
+    </div>
+    <p class="footer-copy">© <span id="year">2026</span> One Empire LLC · Todos los derechos reservados</p>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="stickyCta">
+  <small><b>Mentoría One Empire</b>Cupos limitados</small>
+  <a class="btn btn-red" href="#aplicar">Aplicar <span class="arr">→</span></a>
+</div>
+
+<script>
+// Video placeholder (lógica del template): si el iframe tiene src, se oculta el placeholder
+(function() {
+  document.querySelectorAll('.vt-video').forEach(function(container) {
+    var iframe = container.querySelector('iframe');
+    var placeholder = container.querySelector('.vt-placeholder');
+    if (iframe && iframe.getAttribute('src') && placeholder) { placeholder.style.display = 'none'; }
+    else if (iframe) { iframe.style.display = 'none'; }
+  });
+})();
+// FAQ toggle (template)
+function faqToggle(btn) {
+  var item = btn.parentElement;
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el){ el.classList.remove('open'); });
+  if (!isOpen) item.classList.add('open');
+}
+// Loom: carga el player solo al hacer click
+document.querySelectorAll('.loom[data-loom]').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var box = document.createElement('div'); box.className = 'loom';
+    var f = document.createElement('iframe');
+    f.src = 'https://www.loom.com/embed/' + b.getAttribute('data-loom') + '?autoplay=1&hide_owner=true&hide_share=true&hide_title=true&hideEmbedTopBar=true';
+    f.allow = 'autoplay; fullscreen; picture-in-picture'; f.allowFullscreen = true;
+    box.appendChild(f); b.replaceWith(box);
+  }, { once: true });
+});
+// Reveal al hacer scroll
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  els.forEach(function (e) { io.observe(e); });
+  setTimeout(function () { els.forEach(function (e) { e.classList.add('in'); }); }, 2500);
+})();
+// Sticky CTA móvil: aparece tras el hero y se oculta sobre el formulario
+(function () {
+  var bar = document.getElementById('stickyCta'), form = document.getElementById('aplicar');
+  function upd() {
+    var r = form.getBoundingClientRect();
+    var overForm = r.top < window.innerHeight && r.bottom > 0;
+    bar.classList.toggle('show', window.scrollY > 520 && !overForm);
+  }
+  window.addEventListener('scroll', upd, { passive: true }); upd();
+})();
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
