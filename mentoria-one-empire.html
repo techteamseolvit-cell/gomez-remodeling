@@ -208,6 +208,7 @@ strong { color: var(--txt); font-weight: 800; }
 .case p { font-size: 15px; }
 .case .quote { font-size: 16px; color: #fff; font-weight: 600; line-height: 1.5; }
 .case .quote-more { font-size: 14.5px; }
+.case-video { width: 100%; aspect-ratio: 16/9; background: #000; object-fit: cover; }
 
 /* ---------- viviras / incluye ---------- */
 .viviras-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--bdr-dark); }
@@ -603,10 +604,13 @@ footer { border-top: 1px solid var(--bdr); padding: 44px 0 110px; color: var(--s
         <p><span class="todo">[TODO: cita del testimonio del template Frontera]</span></p>
         <div class="ba-row"><div><small>Antes</small><span class="todo">[TODO]</span></div><div><small>Después</small><span class="todo">[TODO]</span></div></div>
       </article>
-      <article class="case todo-card reveal d1">
-        <span class="todo-tag">Placeholder</span>
-        <div class="who"><span class="av">?</span><div><b>[Nombre del cliente]</b><span>[Empresa · ciudad]</span></div></div>
-        <p><span class="todo">[Caso de éxito – resultado antes/después con cifras reales]</span></p>
+      <article class="case reveal d1">
+        <video class="case-video" controls preload="metadata" playsinline src="https://assets.cdn.filesafe.space/4o5wwWKbFhOEOaerWTE6/media/6ad8fb6289ad2537e4a0e174.mp4"></video>
+        <div class="who"><span class="av">?</span><div><b><span class="todo">[TODO: nombre]</span></b><span>Cliente One Empire</span></div></div>
+        <div class="stars">★★★★★</div>
+        <p class="quote">“Nuestra meta ahora no es llegar a los $100,000, sino mantener los $100,000 al mes, porque ya llegamos a la meta.”</p>
+        <p class="quote-more">El mes pasado cerró con alrededor de $105,000–$107,000.</p>
+        <div class="ba-row"><div><small>Meta</small>$100K / mes</div><div><small>Hoy</small>~$105K–$107K / mes</div></div>
       </article>
       <article class="case todo-card reveal d2">
         <span class="todo-tag">Placeholder</span>
