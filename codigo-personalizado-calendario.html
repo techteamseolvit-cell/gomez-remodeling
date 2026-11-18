@@ -1,6 +1,9 @@
 <style>
   html, body { margin: 0 !important; background: #fff !important; }
   #__nuxt { padding: 40px 0 0 !important; background: #fff !important; }
+  /* casilla de política de privacidad: borde visible y palomita negra */
+  input[type="checkbox"] { -webkit-appearance: none !important; appearance: none !important; width: 20px !important; height: 20px !important; min-width: 20px !important; background-color: #fff !important; border: 2px solid #111 !important; border-radius: 4px !important; cursor: pointer !important; }
+  input[type="checkbox"]:checked { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='%23000000' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important; background-size: 100% 100% !important; background-repeat: no-repeat !important; }
 </style>
 <script>
 (function () {
