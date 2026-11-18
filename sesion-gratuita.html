@@ -66,6 +66,10 @@ footer a{color:rgba(224,30,43,.9)}
 .cal-head h2{font-size:clamp(22px,2.4vw,30px);font-weight:800;margin-top:6px;color:#111;letter-spacing:-.02em}
 .cal-frame{position:relative;overflow:hidden;background:#fff;min-height:520px}
 .cal-frame iframe{display:block;width:100%;border:0;overflow:hidden;background:#fff;color-scheme:light}
+/* recorta el espacio en blanco que el calendario de GHL deja arriba del formulario. Sube o baja estos dos valores (0px = sin recorte) */
+:root{--crop-top:100px}
+.cal-frame iframe{margin-top:calc(var(--crop-top) * -1)}
+@media (max-width:640px){:root{--crop-top:130px}}
 .empty{display:none;min-height:640px;place-items:center;text-align:center;padding:30px;background:#141414;border:1px dashed rgba(224,30,43,.5);color:var(--muted)}
 .empty b{display:block;color:#fff;font-size:18px;margin-bottom:6px}
 .is-empty .cal-frame{display:none}.is-empty .empty{display:grid}
