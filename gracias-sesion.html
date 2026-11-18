@@ -95,8 +95,8 @@ footer a{color:rgba(224,30,43,.9)}
    Número: código de país + número, sin + ni espacios (ej. México: 521 + 10 dígitos)
    Si dejas el número vacío, los botones de WhatsApp se ocultan.
    ========================================================= */
-const WA_NUMBER = "";
-const WA_TEXT = "Hola, acabo de agendar mi sesión gratuita y quiero confirmar los detalles.";
+const WA_NUMBER = "5215623221142";
+const WA_TEXT = "Hola, acabo de agendar mi sesión gratuita después del webinar para dueños de empresas de construcción y quiero confirmar los detalles.";
 
 const waUrl = "https://api.whatsapp.com/send/?phone=" + WA_NUMBER + "&text=" + encodeURIComponent(WA_TEXT) + "&type=phone_number&app_absent=0";
 document.querySelectorAll(".wa-link").forEach(a => { if (WA_NUMBER.trim()) a.href = waUrl; else a.hidden = true; });
