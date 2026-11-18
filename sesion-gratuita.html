@@ -64,15 +64,8 @@ footer a{color:rgba(224,30,43,.9)}
 .cal-head{text-align:center;padding:24px 14px 16px;border-bottom:1px solid rgba(193,18,31,.25);background:#fff}
 .cal-head small{font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
 .cal-head h2{font-size:clamp(22px,2.4vw,30px);font-weight:800;margin-top:6px;color:#111;letter-spacing:-.02em}
-.cal-frame{position:relative;overflow:hidden;background:#fff;min-height:520px}
+.cal-frame{position:relative;background:#fff;min-height:520px;padding:0}
 .cal-frame iframe{display:block;width:100%;border:0;overflow:hidden;background:#fff;color-scheme:light}
-/* recorta el espacio en blanco que el calendario de GHL deja arriba del formulario. Sube o baja estos dos valores (0px = sin recorte) */
-:root{--crop-top:100px}
-.cal-frame iframe{margin-top:calc(var(--crop-top) * -1)}
-@media (max-width:640px){:root{--crop-top:130px}}
-.empty{display:none;min-height:640px;place-items:center;text-align:center;padding:30px;background:#141414;border:1px dashed rgba(224,30,43,.5);color:var(--muted)}
-.empty b{display:block;color:#fff;font-size:18px;margin-bottom:6px}
-.is-empty .cal-frame{display:none}.is-empty .empty{display:grid}
 .note{text-align:center;color:var(--muted);font-size:14.5px;margin-top:18px}
 </style>
 </head>
@@ -99,9 +92,8 @@ footer a{color:rgba(224,30,43,.9)}
       <div class="cal-card rv" id="calCard">
         <div class="cal-head"><small>Tu siguiente paso</small><h2>Reserva tu sesión gratuita</h2></div>
         <div class="cal-frame" id="calFrame"></div>
-        <div class="empty" id="calEmpty"><div><b>Aquí se mostrará el calendario</b>Pega el ID del calendario en <code>CALENDAR_ID</code> (al final de este archivo).</div></div>
       </div>
-      <p class="note">Recibirás la confirmación por correo y por WhatsApp. Si no alcanzas a agendar, un especialista de nuestro equipo se pondrá en contacto contigo.</p>
+      <p class="note">Recibirás la confirmación por correo y por WhatsApp. Al enviar tus datos pasarás a elegir el día y la hora de tu sesión. Si no alcanzas a agendar, un especialista de nuestro equipo se pondrá en contacto contigo.</p>
     </div>
   </section>
 </main>
@@ -119,32 +111,28 @@ footer a{color:rgba(224,30,43,.9)}
 <script src="https://link.msgsndr.com/js/form_embed.js"></script>
 <script>
 /* =========================================================
-   CALENDARIO — pega aquí el ID del calendario de GHL
-   (Calendars → Calendar Settings → tu calendario → Embed → el ID al final de la URL
-    https://api.leadconnectorhq.com/widget/booking/ESTE_ES_EL_ID)
+   CALENDARIO DE GHL (trae el formulario adentro). El código personalizado del calendario
+   (archivo codigo-personalizado-calendario.html) deja 40px arriba y abajo y envía el alto exacto.
    ========================================================= */
-const CALENDAR_ID = "";
+const CALENDAR_ID = "GDB3ol89RtU3B5NvwijU";
 
 (() => {
   const frame = document.getElementById("calFrame");
-  if (!CALENDAR_ID.trim()) { document.getElementById("calCard").classList.add("is-empty"); return; }
   const f = document.createElement("iframe");
-  f.src = "https://api.leadconnectorhq.com/widget/booking/" + CALENDAR_ID.trim();
-  f.id = CALENDAR_ID.trim() + "_" + Date.now();
+  f.src = "https://api.leadconnectorhq.com/widget/booking/" + CALENDAR_ID;
+  f.id = CALENDAR_ID + "_" + Date.now();
   f.title = "Agenda tu sesión gratuita con One Empire";
   f.allow = "payment";
   f.scrolling = "no";
-  f.style.cssText = "width:100%;border:none;overflow:hidden;height:760px;background:#fff;color-scheme:light";
-  /* GHL calcula la altura del calendario justo al ras del contenido y deja el botón inferior pegado/cortado.
-     Cada vez que GHL cambia la altura, sumamos un margen extra (se ve blanco, igual que la tarjeta). */
-  const EXTRA_BOTTOM = 56;
-  let lastSet = null;
-  new MutationObserver(() => {
-    const h = parseFloat(f.style.height);
-    if (!h || h === lastSet) return;
-    lastSet = h + EXTRA_BOTTOM;
-    f.style.height = lastSet + "px";
-  }).observe(f, { attributes: true, attributeFilter: ["style"] });
+  f.style.cssText = "display:block;width:100%;border:none;overflow:hidden;height:700px;background:#fff;color-scheme:light";
+  let want = null;
+  window.addEventListener("message", e => {
+    if (e.source !== f.contentWindow || !e.data || e.data.type !== "oe-size" || typeof e.data.h !== "number") return;
+    want = e.data.h; f.style.height = want + "px";
+  });
+  /* GHL también ajusta la altura por su cuenta; si lo hace, volvemos a la medida exacta. */
+  new MutationObserver(() => { if (want !== null && parseFloat(f.style.height) !== want) f.style.height = want + "px"; })
+    .observe(f, { attributes: true, attributeFilter: ["style"] });
   frame.appendChild(f);
 })();
 document.getElementById("yr").textContent = new Date().getFullYear();

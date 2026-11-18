@@ -1,0 +1,36 @@
+<style>
+  html, body { margin: 0 !important; background: #fff !important; }
+  #__nuxt { padding: 40px 0 0 !important; background: #fff !important; }
+</style>
+<script>
+(function () {
+  var MARGEN_ABAJO = 40;
+  var TITULO = /^\s*(enter details|ingresa (tus )?detalles)\s*$/i;
+  var ultimo = -1;
+
+  function ocultarTitulo() {
+    document.querySelectorAll("h1,h2,h3,h4,h5,h6,p,span,div,label,legend").forEach(function (el) {
+      if (el.children.length === 0 && TITULO.test(el.textContent)) el.style.display = "none";
+    });
+  }
+
+  function medir() {
+    var raiz = document.getElementById("__nuxt") || document.body;
+    var base = raiz.getBoundingClientRect().top + window.scrollY;
+    var fondo = 0;
+    raiz.querySelectorAll("*").forEach(function (el) {
+      if (getComputedStyle(el).position === "fixed") return;
+      var r = el.getBoundingClientRect();
+      if (r.height > 0) fondo = Math.max(fondo, r.bottom + window.scrollY);
+    });
+    var h = Math.ceil(fondo + MARGEN_ABAJO);
+    if (h > 0 && h !== ultimo) { ultimo = h; parent.postMessage({ type: "oe-size", h: h }, "*"); }
+  }
+
+  function tick() { ocultarTitulo(); medir(); }
+  new MutationObserver(tick).observe(document.documentElement, { childList: true, subtree: true, attributes: true, characterData: true });
+  window.addEventListener("resize", tick);
+  setInterval(tick, 400);
+  tick();
+})();
+</script>
